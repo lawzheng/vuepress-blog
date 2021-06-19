@@ -21,6 +21,7 @@ module.exports = {
       {text: '阅读', link: `/book/${bookList[0]}`},
       {text: 'Github', link: 'https://github.com/lawzheng'}      
     ],
+    sidebarDepth: 2,
     sidebar: {
       '/cate/': 'auto',
       '/blog/': blogList,

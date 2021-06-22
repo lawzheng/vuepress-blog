@@ -1,6 +1,6 @@
-## git
+# git
 
-#### 上传更新
+## 上传更新
 
 git add .
 
@@ -10,22 +10,29 @@ git push origin master
 
 
 
-#### 第一次上传
+## 第一次上传
 
+```JS
 git init
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/shench5612390/Test.git
 git push -u origin master
+```
 
 
 
+## 复杂流程
+
+```js
 第一次流程： git clone http://....git 
 git branch dev // 创建分支 
 git checkout dev // 切换分支
 发布release版本： 
 git tag -a v8.0 -m "这是8.0版本"
 git push origin v8.0
+
+
  后续开发提交代码流程：
  1.git checkout dev 切换到开发分支 
 2.git stash 暂存本地开发分支dev 
@@ -41,14 +48,25 @@ git push origin v8.0
 12.登录http://120.76.27.54:10080/user/login?redirect_to= 
 新建请求合并代码到master分支（基准分支选master 对比分支选dev） 
 13.等待管理员同意合并请求，代码没有冲突时会本地开发的dev正式同步到master分支
+```
 
-// 看不同
+
+
+## 看不同
+```js
 git diff master develop --name-status
 git diff master develop --name-only
 A(添加) M(修改) D(删除)
+```
 
-// 回退
+
+
+## 回退
+
+```js
 git log 找到commit 后面对应的ID
 git reset HEAD b13aa107160db6f50c196b955e43f01f68a089af
 此时修改好代码 commit 后查看git log 发现需要merge 在一起
 commit后用 git push origin master --force 来强行覆盖远程记录。（如果是develop分支将master 修改为develop即可）
+```
+

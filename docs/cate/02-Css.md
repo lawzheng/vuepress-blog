@@ -1107,6 +1107,19 @@ text-decoration   underline
 
 
 
+## 兼容ie
+
+### *display:inline
+
+这个是一种CSS hack写法
+IE6识别*和_， 不识别 !important
+IE7识别*, 不识别_，识别 !important
+而firefox两个都不识别， 识别 !important
+
+
+
+
+
 
 
 ## 响应式布局

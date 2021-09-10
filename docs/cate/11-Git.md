@@ -88,3 +88,49 @@ git reset HEAD b13aa107160db6f50c196b955e43f01f68a089af
 commit后用 git push origin master --force 来强行覆盖远程记录。（如果是develop分支将master 修改为develop即可）
 ```
 
+
+
+## stash
+
+```js
+存当前
+git stash
+
+查看列表
+git stash list
+
+带名字存
+git stash save "xx"
+
+pop第一个
+git stash pop
+
+pop某一个
+git stash apply stash{0}
+
+清除单个
+git stash drop stash{0}
+
+清除所有stash
+git stash clear
+```
+
+
+
+## 分支
+
+```js
+拉远程分支
+git checkout -b localname origin/remotename
+```
+
+
+
+
+
+## 修改commit信息
+
+```js
+git commit --amend
+```
+

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>图片预览组件 | Lawz&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="罗政的个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.40a8a558.js" as="script"><link rel="preload" href="/assets/js/2.17a87611.js" as="script"><link rel="preload" href="/assets/js/13.b12505f1.js" as="script"><link rel="prefetch" href="/assets/js/10.f07c092e.js"><link rel="prefetch" href="/assets/js/11.f749e8eb.js"><link rel="prefetch" href="/assets/js/12.e531c2c6.js"><link rel="prefetch" href="/assets/js/14.00183237.js"><link rel="prefetch" href="/assets/js/15.e5439248.js"><link rel="prefetch" href="/assets/js/16.f6e500eb.js"><link rel="prefetch" href="/assets/js/17.f7249945.js"><link rel="prefetch" href="/assets/js/18.75efd5a6.js"><link rel="prefetch" href="/assets/js/19.432a2dcf.js"><link rel="prefetch" href="/assets/js/20.d8a6f75e.js"><link rel="prefetch" href="/assets/js/21.2cddeda0.js"><link rel="prefetch" href="/assets/js/22.9ac4a47e.js"><link rel="prefetch" href="/assets/js/23.54f2f490.js"><link rel="prefetch" href="/assets/js/24.5ea90dc2.js"><link rel="prefetch" href="/assets/js/25.cd7e67be.js"><link rel="prefetch" href="/assets/js/26.0ecb51db.js"><link rel="prefetch" href="/assets/js/27.ad6f7a94.js"><link rel="prefetch" href="/assets/js/28.599e7548.js"><link rel="prefetch" href="/assets/js/29.db337619.js"><link rel="prefetch" href="/assets/js/3.9c061a40.js"><link rel="prefetch" href="/assets/js/30.2c774d22.js"><link rel="prefetch" href="/assets/js/31.c2efbdb8.js"><link rel="prefetch" href="/assets/js/32.3517d4b7.js"><link rel="prefetch" href="/assets/js/33.04d71689.js"><link rel="prefetch" href="/assets/js/34.d49bd4a4.js"><link rel="prefetch" href="/assets/js/35.2749c240.js"><link rel="prefetch" href="/assets/js/36.d91c6458.js"><link rel="prefetch" href="/assets/js/37.332d3ece.js"><link rel="prefetch" href="/assets/js/38.ad56483d.js"><link rel="prefetch" href="/assets/js/39.07924f44.js"><link rel="prefetch" href="/assets/js/4.390c7706.js"><link rel="prefetch" href="/assets/js/40.a760418b.js"><link rel="prefetch" href="/assets/js/41.43b5e3ca.js"><link rel="prefetch" href="/assets/js/42.c87fc509.js"><link rel="prefetch" href="/assets/js/43.2ee3d975.js"><link rel="prefetch" href="/assets/js/44.572a1706.js"><link rel="prefetch" href="/assets/js/45.095f2f92.js"><link rel="prefetch" href="/assets/js/46.ea57dafd.js"><link rel="prefetch" href="/assets/js/47.aef972db.js"><link rel="prefetch" href="/assets/js/48.f3e9fa88.js"><link rel="prefetch" href="/assets/js/49.dcf9703d.js"><link rel="prefetch" href="/assets/js/5.dc6bd135.js"><link rel="prefetch" href="/assets/js/50.671359b3.js"><link rel="prefetch" href="/assets/js/51.0a2ab8c6.js"><link rel="prefetch" href="/assets/js/52.ac7e96a0.js"><link rel="prefetch" href="/assets/js/53.85d58ffb.js"><link rel="prefetch" href="/assets/js/54.f3338f23.js"><link rel="prefetch" href="/assets/js/55.d617fb55.js"><link rel="prefetch" href="/assets/js/56.4e1771b6.js"><link rel="prefetch" href="/assets/js/57.8d2afd0f.js"><link rel="prefetch" href="/assets/js/58.c3178a81.js"><link rel="prefetch" href="/assets/js/59.b78822b9.js"><link rel="prefetch" href="/assets/js/6.d62c0422.js"><link rel="prefetch" href="/assets/js/60.af827202.js"><link rel="prefetch" href="/assets/js/61.60e9a192.js"><link rel="prefetch" href="/assets/js/62.68627017.js"><link rel="prefetch" href="/assets/js/63.c304dbd4.js"><link rel="prefetch" href="/assets/js/64.f4cd2ef9.js"><link rel="prefetch" href="/assets/js/65.be02de64.js"><link rel="prefetch" href="/assets/js/66.5dc9488b.js"><link rel="prefetch" href="/assets/js/67.802385a0.js"><link rel="prefetch" href="/assets/js/68.8b43adbc.js"><link rel="prefetch" href="/assets/js/69.096ebdc2.js"><link rel="prefetch" href="/assets/js/7.ca30be63.js"><link rel="prefetch" href="/assets/js/70.ef88a86c.js"><link rel="prefetch" href="/assets/js/71.394f001c.js"><link rel="prefetch" href="/assets/js/72.a4b61402.js"><link rel="prefetch" href="/assets/js/73.93801120.js"><link rel="prefetch" href="/assets/js/74.0fa5cf8a.js"><link rel="prefetch" href="/assets/js/75.e876ddf6.js"><link rel="prefetch" href="/assets/js/76.efabb146.js"><link rel="prefetch" href="/assets/js/77.f460ecde.js"><link rel="prefetch" href="/assets/js/78.04735d2c.js"><link rel="prefetch" href="/assets/js/79.6845e905.js"><link rel="prefetch" href="/assets/js/8.dc472437.js"><link rel="prefetch" href="/assets/js/80.49273a1b.js"><link rel="prefetch" href="/assets/js/81.31602c46.js"><link rel="prefetch" href="/assets/js/82.8be84a47.js"><link rel="prefetch" href="/assets/js/83.4df8e4fb.js"><link rel="prefetch" href="/assets/js/9.6cf392ae.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lawz's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/2021-12-02 N合一版本总结.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/2021-12-02 N合一版本总结.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/2021-12-02 N合一版本总结.html" class="sidebar-link">N合一版本总结</a></li><li><a href="/blog/2021-12-01 控制器中交换机代码优化.html" class="sidebar-link">控制器中交换机代码优化</a></li><li><a href="/blog/2021-11-27 升win11指南.html" class="sidebar-link">升win11指南</a></li><li><a href="/blog/2021-11-25 xmind转自测系统导入.html" class="sidebar-link">xmind转自测系统导入格式</a></li><li><a href="/blog/2021-11-24 自动寻找未翻译文字.html" class="sidebar-link">自动寻找未翻译文字</a></li><li><a href="/blog/2021-08-31 vue2升vue3笔记.html" class="sidebar-link">vue2升vue3笔记</a></li><li><a href="/blog/2021-08-27 拓扑图封装.html" class="sidebar-link">拓扑图创新</a></li><li><a href="/blog/2021-08-06 自动检测页面缺失依赖及自动测试页面是否报错.html" class="sidebar-link">自动检测页面缺失依赖及自动测试页面是否报错</a></li><li><a href="/blog/2021-07-13 webpack5踩坑记录.html" class="sidebar-link">webpack5踩坑记录</a></li><li><a href="/blog/2021-07-05 手写qtip插件.html" class="sidebar-link">手写qtip插件</a></li><li><a href="/blog/2021-06-30 web端首页优化.html" class="sidebar-link">web端首页优化</a></li><li><a href="/blog/2021-06-21 gulp手写注入插件.html" class="sidebar-link">gulp手写注入插件</a></li><li><a href="/blog/2021-06-19 vue3笔记.html" class="sidebar-link">Vue3</a></li><li><a href="/blog/2021-06-10 js手写代码系列.html" class="sidebar-link">js手写代码系列</a></li><li><a href="/blog/2021-06-04 魔改G6.js imageMinimap.html" class="sidebar-link">魔改G6 imageMinimap</a></li><li><a href="/blog/2021-06-01 js处理时区问题.html" class="sidebar-link">js处理时区问题</a></li><li><a href="/blog/2021-06-01 js处理大数据不卡顿.html" class="sidebar-link">js处理大数据不卡顿</a></li><li><a href="/blog/2021-04-27 ext Debug模式下鼠标hover组件名.html" class="sidebar-link">ext Debug模式下鼠标hover组件名</a></li><li><a href="/blog/2021-04-19 ext实现轮播图组件.html" class="sidebar-link">ext实现轮播图组件</a></li><li><a href="/blog/2021-03-19 ext动态更改表格列项.html" class="sidebar-link">ext动态更改表格列项</a></li><li><a href="/blog/2021-01-29 优化复制功能.html" class="sidebar-link">优化复制功能</a></li><li><a href="/blog/2021-01-19 ext仿vue mixin效果.html" class="sidebar-link">ext仿vue mixin效果</a></li><li><a href="/blog/2020-12-22 仿赛博朋克按钮效果.html" class="sidebar-link">仿赛博朋克按钮效果</a></li><li><a href="/blog/2020-12-22 node搭配腾讯云函数自动发邮件.html" class="sidebar-link">node搭配腾讯云函数自动发邮件</a></li><li><a href="/blog/2020-12-19 谈下网站水印.html" class="sidebar-link">谈下网站水印</a></li><li><a href="/blog/2020-12-17 禁止浏览器打开控制台.html" class="sidebar-link">禁止浏览器打开控制台</a></li><li><a href="/blog/2020-12-03 gulp 本地调试增加代理及热更新.html" class="sidebar-link">gulp 本地调试增加代理及热更新</a></li><li><a href="/blog/2020-11-24 手写表格列宽度拖动.html" class="sidebar-link">背景</a></li><li><a href="/blog/2020-11-17 node.js读取文件，添加依赖.html" class="sidebar-link">node.js读取文件，添加依赖</a></li><li><a href="/blog/2020-10-19 近期面试总结.html" class="sidebar-link">开篇</a></li><li><a href="/blog/2020-09-24 基于高德搭建选址组件.html" class="sidebar-link">基于高德搭建选址组件</a></li><li><a href="/blog/2020-09-21 拦截复制事件并替换图片url.html" class="sidebar-link">拦截复制事件并替换图片url</a></li><li><a href="/blog/2020-09-20 面试总结.html" class="sidebar-link">2020/09/20 面试总结</a></li><li><a href="/blog/2020-07-04 搭建前端监控系统.html" class="sidebar-link">搭建前端监控系统</a></li><li><a href="/blog/2020-05-05 vue首屏优化.html" class="sidebar-link">vue首屏优化</a></li><li><a href="/blog/2020-04-23 video兼容处理.html" class="sidebar-link">video兼容处理</a></li><li><a href="/blog/2020-04-05 vue路由改造.html" class="sidebar-link">记一次vue路由改造</a></li><li><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html" class="active sidebar-link">图片预览组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html#介绍" class="sidebar-link">介绍</a></li><li class="sidebar-sub-header"><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html#封装成全局组件" class="sidebar-link">封装成全局组件</a></li><li class="sidebar-sub-header"><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html#后记" class="sidebar-link">后记</a></li></ul></li><li><a href="/blog/2020-03-07 骨架屏实验.html" class="sidebar-link">骨架屏实验 vue-content-loader</a></li><li><a href="/blog/2020-03-07 记录下写博客所需工具.html" class="sidebar-link">写博客工具</a></li><li><a href="/blog/2020-03-02 根据轮播图改变背景色.html" class="sidebar-link">根据轮播图改变背景色</a></li><li><a href="/blog/2020-02-23 各种特效（彩带、大白、验证码等）.html" class="sidebar-link">彩带</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="图片预览组件"><a href="#图片预览组件" class="header-anchor">#</a> 图片预览组件</h1> <h2 id="介绍"><a href="#介绍" class="header-anchor">#</a> 介绍</h2> <p>项目里有预览图片的需求，但是以前的不支持放大缩小，百度找到一款</p> <p><strong>v-viewer</strong></p> <p>附上GitHub链接</p> <p>https://github.com/fengyuanchen/viewerjs</p> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <p>安装</p> <div class="language- extra-class"><pre class="language-text"><code>npm install viewerjs
+</code></pre></div><p>全局注册</p> <div class="language- extra-class"><pre class="language-text"><code>import Viewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
+
+Vue.use(Viewer, {
+  defaultOptions: {
+    zIndex: 99
+  }
+})
+</code></pre></div><p>在需要的预览的图片外包一层viewer组件，点击图片时即可触发预览（不用自己写点击事件）</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;viewer :images=&quot;images&quot;&gt;
+	&lt;img v-for=&quot;(src, index) in images&quot; :src=&quot;src&quot;&gt;
+&lt;/viewer&gt;
+</code></pre></div><h2 id="封装成全局组件"><a href="#封装成全局组件" class="header-anchor">#</a> 封装成全局组件</h2> <p>像前面说的那样使用，及其不方便，于是动了封装的念头，下面贴上源码</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 图片预览组件 --&gt;
+&lt;!-- Create by luozheng on 2020/04/03 --&gt;
+&lt;style lang=&quot;less&quot; scoped&gt;
+&lt;/style&gt;
+
+&lt;template&gt;
+  &lt;div style=&quot;display: none&quot;&gt;
+    &lt;viewer
+      :options=&quot;options&quot;
+      :images=&quot;imagePreview.list&quot;
+      @inited=&quot;init&quot;
+      ref=&quot;viewer&quot;
+    &gt;
+      &lt;img v-for=&quot;(src, index) in imagePreview.list&quot; :src=&quot;src&quot; :key=&quot;src + index&quot;&gt;
+    &lt;/viewer&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import {mapState} from 'vuex'
+  export default {
+    name: 'LyImagePreview',
+    data () {
+      return {
+        options: {
+          toolbar: false,
+          initialViewIndex: 0,
+          title: false,
+          navbar: false
+        },
+        $viewer: {}
+      }
+    },
+    props: {
+    },
+    computed: {
+      time () {
+        return this.imagePreview.time
+      },
+      ...mapState(['imagePreview'])
+    },
+    watch: {
+      time () {
+        this.show()
+      }
+    },
+    mounted () {
+    },
+    methods: {
+      init (viewer) {
+        this.$viewer = viewer
+      },
+      show () {
+        this.$viewer.index = this.imagePreview.index
+        this.$viewer.show()
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre></div><ol><li><p>先在app.vue中注册成为全局组件</p></li> <li><p>在main.js中添加全局方法</p> <div class="language- extra-class"><pre class="language-text"><code>Vue.prototype.showImagePreview = opt =&gt; {                       // 调用图片预览
+  store.commit('setImagePreview', {
+    time: +new Date(),
+    list: opt.list,
+    index: opt.index
+  })
+}
+</code></pre></div><p>在vuex中添加数据</p> <div class="language- extra-class"><pre class="language-text"><code>state
+imagePreview: {
+  list: [],
+  index: 0,
+  time: 0
+},
+
+mutations
+setImagePreview: (state, val) =&gt; {
+  state.imagePreview.list = val.list
+  state.imagePreview.index = val.index
+  state.imagePreview.time = val.time
+},
+</code></pre></div></li> <li><p>预览组件通过监听time值变化来显示</p> <p>这里用时间戳来控制也是逼不得已的事，找了半小时没找到对应的隐藏事件，翻了下源码也没看到，所以出此下策</p> <p>使用方法</p> <div class="language- extra-class"><pre class="language-text"><code>this.showImagePreview({
+  list: imageList,
+  index: index
+})
+
+list为图片数组['src', 'src']
+index为点击图片在数组中的索引
+
+</code></pre></div></li></ol> <h2 id="后记"><a href="#后记" class="header-anchor">#</a> 后记</h2> <p>这里要专门说下索引这个事</p> <p>直接通过this.$viewer.index = this.imagePreview.index即可达到效果</p> <p>看文档的options有个initialViewIndex属性，但动态改变会有问题</p> <p>通过computed计算出属性的话要点两下才能触发预览（不知道为啥）</p> <p>直接修改data中的options的话，预览都出不来了</p> <p>后来通过打印this.$viewer，发现有个index属性，试了下没想到成功了</p> <p>ok，就这么多，希望对大家有帮助</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/2020-04-05 vue路由改造.html" class="prev">
+        记一次vue路由改造
+      </a></span> <span class="next"><a href="/blog/2020-03-07 骨架屏实验.html">
+        骨架屏实验 vue-content-loader
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.40a8a558.js" defer></script><script src="/assets/js/2.17a87611.js" defer></script><script src="/assets/js/13.b12505f1.js" defer></script>
+  </body>
+</html>

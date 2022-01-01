@@ -11,7 +11,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
   base: '/', // 这是部署到github相关的配置
-  dest: './ROOT',
+  // dest: './',
   themeConfig: {
     nav:[
       {text: '博客', link: `/blog/${blogList[0]}`},

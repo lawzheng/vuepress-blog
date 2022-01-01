@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>搭建前端监控系统 | Lawz&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="罗政的个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.2d05c97c.js" as="script"><link rel="preload" href="/assets/js/2.52cbf88a.js" as="script"><link rel="preload" href="/assets/js/17.5281dcd6.js" as="script"><link rel="prefetch" href="/assets/js/10.56e78101.js"><link rel="prefetch" href="/assets/js/11.2080dc2a.js"><link rel="prefetch" href="/assets/js/12.e05150ed.js"><link rel="prefetch" href="/assets/js/13.86df7c7c.js"><link rel="prefetch" href="/assets/js/14.e60048bf.js"><link rel="prefetch" href="/assets/js/15.12f0e6fb.js"><link rel="prefetch" href="/assets/js/16.c53bf93c.js"><link rel="prefetch" href="/assets/js/18.a460ba23.js"><link rel="prefetch" href="/assets/js/19.d7995de0.js"><link rel="prefetch" href="/assets/js/20.ca632186.js"><link rel="prefetch" href="/assets/js/21.86571bbc.js"><link rel="prefetch" href="/assets/js/22.e7dd2c67.js"><link rel="prefetch" href="/assets/js/23.5fd56a4d.js"><link rel="prefetch" href="/assets/js/24.decc4e21.js"><link rel="prefetch" href="/assets/js/25.f3bf686a.js"><link rel="prefetch" href="/assets/js/26.35e25ac6.js"><link rel="prefetch" href="/assets/js/27.a2a809b5.js"><link rel="prefetch" href="/assets/js/28.cf26283c.js"><link rel="prefetch" href="/assets/js/29.c0bb7f61.js"><link rel="prefetch" href="/assets/js/3.8aa54c7b.js"><link rel="prefetch" href="/assets/js/30.e9b4bf42.js"><link rel="prefetch" href="/assets/js/31.6a9fb1ef.js"><link rel="prefetch" href="/assets/js/32.96fc20cd.js"><link rel="prefetch" href="/assets/js/33.544b532a.js"><link rel="prefetch" href="/assets/js/34.eeae8358.js"><link rel="prefetch" href="/assets/js/35.eb6f1a52.js"><link rel="prefetch" href="/assets/js/36.0d8b6123.js"><link rel="prefetch" href="/assets/js/37.74c578c9.js"><link rel="prefetch" href="/assets/js/38.ad6dd339.js"><link rel="prefetch" href="/assets/js/39.a7904879.js"><link rel="prefetch" href="/assets/js/4.0afd6084.js"><link rel="prefetch" href="/assets/js/40.d56727b8.js"><link rel="prefetch" href="/assets/js/41.833cccce.js"><link rel="prefetch" href="/assets/js/42.2fbf956e.js"><link rel="prefetch" href="/assets/js/43.c3b634e5.js"><link rel="prefetch" href="/assets/js/44.1192d919.js"><link rel="prefetch" href="/assets/js/45.a05fdcd7.js"><link rel="prefetch" href="/assets/js/46.2d8add9d.js"><link rel="prefetch" href="/assets/js/47.929dbff5.js"><link rel="prefetch" href="/assets/js/48.779841a5.js"><link rel="prefetch" href="/assets/js/49.9b6b12ce.js"><link rel="prefetch" href="/assets/js/5.31059d95.js"><link rel="prefetch" href="/assets/js/50.07a55584.js"><link rel="prefetch" href="/assets/js/51.840d7e92.js"><link rel="prefetch" href="/assets/js/52.36e16516.js"><link rel="prefetch" href="/assets/js/53.d1f5ffdd.js"><link rel="prefetch" href="/assets/js/54.86005cb8.js"><link rel="prefetch" href="/assets/js/55.5fbdc2da.js"><link rel="prefetch" href="/assets/js/56.99a5c654.js"><link rel="prefetch" href="/assets/js/57.40a5fd78.js"><link rel="prefetch" href="/assets/js/58.457dcd21.js"><link rel="prefetch" href="/assets/js/59.7242476f.js"><link rel="prefetch" href="/assets/js/6.21a47d84.js"><link rel="prefetch" href="/assets/js/60.4c9ab759.js"><link rel="prefetch" href="/assets/js/61.9af739cc.js"><link rel="prefetch" href="/assets/js/62.522248ce.js"><link rel="prefetch" href="/assets/js/63.da9d2444.js"><link rel="prefetch" href="/assets/js/64.4da8b1ba.js"><link rel="prefetch" href="/assets/js/65.72ea2db8.js"><link rel="prefetch" href="/assets/js/66.d3862899.js"><link rel="prefetch" href="/assets/js/67.5c98f72d.js"><link rel="prefetch" href="/assets/js/68.9058fe79.js"><link rel="prefetch" href="/assets/js/69.e00ce249.js"><link rel="prefetch" href="/assets/js/7.58c9b76c.js"><link rel="prefetch" href="/assets/js/70.81edfd5f.js"><link rel="prefetch" href="/assets/js/71.df28ac89.js"><link rel="prefetch" href="/assets/js/72.ae3eb4ff.js"><link rel="prefetch" href="/assets/js/73.079b933d.js"><link rel="prefetch" href="/assets/js/74.cb369d86.js"><link rel="prefetch" href="/assets/js/75.136fad40.js"><link rel="prefetch" href="/assets/js/76.0759c457.js"><link rel="prefetch" href="/assets/js/77.42a95345.js"><link rel="prefetch" href="/assets/js/78.3ca97af5.js"><link rel="prefetch" href="/assets/js/79.1602e5f5.js"><link rel="prefetch" href="/assets/js/8.2c655620.js"><link rel="prefetch" href="/assets/js/80.253164cc.js"><link rel="prefetch" href="/assets/js/81.79fd663b.js"><link rel="prefetch" href="/assets/js/82.dbcd3c72.js"><link rel="prefetch" href="/assets/js/83.35d274e2.js"><link rel="prefetch" href="/assets/js/9.d4199f5a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lawz's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/2021-12-02 N合一版本总结.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/2021-12-02 N合一版本总结.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="//home/runner/work/vuepress-blog/vuepress-blog/docs/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/2021-12-02 N合一版本总结.html" class="sidebar-link">N合一版本总结</a></li><li><a href="/blog/2021-12-01 控制器中交换机代码优化.html" class="sidebar-link">控制器中交换机代码优化</a></li><li><a href="/blog/2021-11-27 升win11指南.html" class="sidebar-link">升win11指南</a></li><li><a href="/blog/2021-11-25 xmind转自测系统导入.html" class="sidebar-link">xmind转自测系统导入格式</a></li><li><a href="/blog/2021-11-24 自动寻找未翻译文字.html" class="sidebar-link">自动寻找未翻译文字</a></li><li><a href="/blog/2021-08-31 vue2升vue3笔记.html" class="sidebar-link">vue2升vue3笔记</a></li><li><a href="/blog/2021-08-27 拓扑图封装.html" class="sidebar-link">拓扑图创新</a></li><li><a href="/blog/2021-08-06 自动检测页面缺失依赖及自动测试页面是否报错.html" class="sidebar-link">自动检测页面缺失依赖及自动测试页面是否报错</a></li><li><a href="/blog/2021-07-13 webpack5踩坑记录.html" class="sidebar-link">webpack5踩坑记录</a></li><li><a href="/blog/2021-07-05 手写qtip插件.html" class="sidebar-link">手写qtip插件</a></li><li><a href="/blog/2021-06-30 web端首页优化.html" class="sidebar-link">web端首页优化</a></li><li><a href="/blog/2021-06-21 gulp手写注入插件.html" class="sidebar-link">gulp手写注入插件</a></li><li><a href="/blog/2021-06-19 vue3笔记.html" class="sidebar-link">Vue3</a></li><li><a href="/blog/2021-06-10 js手写代码系列.html" class="sidebar-link">js手写代码系列</a></li><li><a href="/blog/2021-06-04 魔改G6.js imageMinimap.html" class="sidebar-link">魔改G6 imageMinimap</a></li><li><a href="/blog/2021-06-01 js处理时区问题.html" class="sidebar-link">js处理时区问题</a></li><li><a href="/blog/2021-06-01 js处理大数据不卡顿.html" class="sidebar-link">js处理大数据不卡顿</a></li><li><a href="/blog/2021-04-27 ext Debug模式下鼠标hover组件名.html" class="sidebar-link">ext Debug模式下鼠标hover组件名</a></li><li><a href="/blog/2021-04-19 ext实现轮播图组件.html" class="sidebar-link">ext实现轮播图组件</a></li><li><a href="/blog/2021-03-19 ext动态更改表格列项.html" class="sidebar-link">ext动态更改表格列项</a></li><li><a href="/blog/2021-01-29 优化复制功能.html" class="sidebar-link">优化复制功能</a></li><li><a href="/blog/2021-01-19 ext仿vue mixin效果.html" class="sidebar-link">ext仿vue mixin效果</a></li><li><a href="/blog/2020-12-22 仿赛博朋克按钮效果.html" class="sidebar-link">仿赛博朋克按钮效果</a></li><li><a href="/blog/2020-12-22 node搭配腾讯云函数自动发邮件.html" class="sidebar-link">node搭配腾讯云函数自动发邮件</a></li><li><a href="/blog/2020-12-19 谈下网站水印.html" class="sidebar-link">谈下网站水印</a></li><li><a href="/blog/2020-12-17 禁止浏览器打开控制台.html" class="sidebar-link">禁止浏览器打开控制台</a></li><li><a href="/blog/2020-12-03 gulp 本地调试增加代理及热更新.html" class="sidebar-link">gulp 本地调试增加代理及热更新</a></li><li><a href="/blog/2020-11-24 手写表格列宽度拖动.html" class="sidebar-link">背景</a></li><li><a href="/blog/2020-11-17 node.js读取文件，添加依赖.html" class="sidebar-link">node.js读取文件，添加依赖</a></li><li><a href="/blog/2020-10-19 近期面试总结.html" class="sidebar-link">开篇</a></li><li><a href="/blog/2020-09-24 基于高德搭建选址组件.html" class="sidebar-link">基于高德搭建选址组件</a></li><li><a href="/blog/2020-09-21 拦截复制事件并替换图片url.html" class="sidebar-link">拦截复制事件并替换图片url</a></li><li><a href="/blog/2020-09-20 面试总结.html" class="sidebar-link">2020/09/20 面试总结</a></li><li><a href="/blog/2020-07-04 搭建前端监控系统.html" class="active sidebar-link">搭建前端监控系统</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#sentry" class="sidebar-link">sentry</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#注册账户" class="sidebar-link">注册账户</a></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#引入项目" class="sidebar-link">引入项目</a></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#上传sourcemap" class="sidebar-link">上传sourceMap</a></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#正式环境与测试环境区分" class="sidebar-link">正式环境与测试环境区分</a></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#搭建自己的sentry服务器" class="sidebar-link">搭建自己的sentry服务器</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/2020-07-04 搭建前端监控系统.html#搭建自己的前端监控" class="sidebar-link">搭建自己的前端监控</a></li></ul></li><li><a href="/blog/2020-05-05 vue首屏优化.html" class="sidebar-link">vue首屏优化</a></li><li><a href="/blog/2020-04-23 video兼容处理.html" class="sidebar-link">video兼容处理</a></li><li><a href="/blog/2020-04-05 vue路由改造.html" class="sidebar-link">记一次vue路由改造</a></li><li><a href="/blog/2020-04-03 vue图片预览插件v-viewer使用.html" class="sidebar-link">图片预览组件</a></li><li><a href="/blog/2020-03-07 骨架屏实验.html" class="sidebar-link">骨架屏实验 vue-content-loader</a></li><li><a href="/blog/2020-03-07 记录下写博客所需工具.html" class="sidebar-link">写博客工具</a></li><li><a href="/blog/2020-03-02 根据轮播图改变背景色.html" class="sidebar-link">根据轮播图改变背景色</a></li><li><a href="/blog/2020-02-23 各种特效（彩带、大白、验证码等）.html" class="sidebar-link">彩带</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="搭建前端监控系统"><a href="#搭建前端监控系统" class="header-anchor">#</a> 搭建前端监控系统</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>有两种做法</p> <ol><li>使用开源项目，例如sentry，fundebug等。优点是方便，接入即可，缺点是需要银子。</li> <li>自己搭建。通过监听、劫持各种事件，处理信息后上报。</li></ol> <p>sentry可以自己搭建环境就不用收费，那么先来讲讲sentry在vue中的使用。</p> <h2 id="sentry"><a href="#sentry" class="header-anchor">#</a> sentry</h2> <p>绝大部分内容来自掘金作者：夜_游神</p> <p>https://juejin.im/post/5eeaebf2f265da02a87f00bf</p> <h3 id="注册账户"><a href="#注册账户" class="header-anchor">#</a> 注册账户</h3> <ul><li>首先注册一个账户（测试玩玩可以用自己的，公司项目还是用公司邮箱吧），注册时组织千万别乱填，这玩意很重要，后面很多地方都需要</li> <li>注册账户完成后注册项目</li></ul> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5aa474342c14?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>项目名称也不能乱写后面也有用的，选择自己的语言（vue居然还要搜索，我大VUE为何沦落至此？）</p> <p>注册完项目后你就做好了前置准备了</p> <h3 id="引入项目"><a href="#引入项目" class="header-anchor">#</a> 引入项目</h3> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b0953e90bf3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b0020df4ccf?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <div class="language- extra-class"><pre class="language-text"><code>cnpm install @sentry/browser
+
+cnpm install @sentry/integrations
+
+//在main.js中引入
+import Vue from 'vue'import * as Sentry from '@sentry/browser';
+import { Vue as VueIntegration } from '@sentry/integrations';
+
+Sentry.init({
+    dsn: 'https://32ad19d9b80448f593f1df2833256d23@o406425.ingest.sentry.io/5273959',
+    integrations: [new VueIntegration({Vue, attachProps: true})],
+ })
+</code></pre></div><p>这时简单制造个报错，即可在控制台看到sentry的接口上报</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b0f3cd53f94?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b10c0582f02?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>高兴之余仔细一看，这特瞄的都报的啥错？完全看不懂啊？因为正式环境的代码都是进行了丑化，没有.map文件就是报错了你也不知道具体位置。这知道和没知道简直没有区别啊</p> <p>这时候我们就要进入第二步，将.map文件上传到服务器</p> <h3 id="上传sourcemap"><a href="#上传sourcemap" class="header-anchor">#</a> 上传sourceMap</h3> <p>一：</p> <p>因为公司项目还是vue-cli2，这里就是自己研究的</p> <p>打开package.json，看build命令，调的是build/build.js</p> <p>进到build.js中看到配置是从config/index,js及webpack.prod.conf中取得</p> <p>进config/index,js，发现productionSourceMap，置true即可</p> <p>来到webpack.prod.conf中，因之前换成了ParallelUglifyPlugin插件进行打包，在其配置中开启sourcemap</p> <div class="language- extra-class"><pre class="language-text"><code>new ParallelUglifyPlugin({
+  cacheDir: '.cache/',   // 设置缓存路径，不改动的调用缓存，第二次及后面build时提速
+  uglifyJS:{
+    output: {
+      // 最紧凑的输出
+      beautify: false,
+      // 删除所有的注释
+      comments: false,
+    },
+    // 在UglifyJs删除没有用到的代码时不输出警告
+    warnings: false,
+    compress: {
+      // 删除所有的 `console` 语句，可以兼容ie浏览器
+      // drop_console: true,
+      // 内嵌定义了但是只用到一次的变量
+      collapse_vars: true,
+      // 提取出出现多次但是没有定义成变量去引用的静态值
+      reduce_vars: true,
+    }
+  },
+  sourceMap: true
+}),
+</code></pre></div><p>往下看，还有webpackConfig得改</p> <div class="language- extra-class"><pre class="language-text"><code>var webpackConfig = merge(baseWebpackConfig, {
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: true,
+      extract: true
+    })
+  },
+  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  output: {
+    path: config.build.assetsRoot,
+    filename: utils.assetsPath(`js/[name].[chunkhash].js`),
+    chunkFilename: utils.assetsPath(`js/[id].[chunkhash].js`)
+  },
+  plugins: plugins
+})
+</code></pre></div><p>此处devtool不开启貌似就打包不了map，开启了浏览器又报找不到map文件的warning（map没上传的服务器），应该可以通过限制ip访问解决map泄露问题。</p> <p>好，npm run build看看是否有map文件生成了。</p> <p>二：</p> <p>将打包的文件自动上传的sentry服务器，这时候我们需要一个webpack插件@sentry/webpack-plugin 首先就是安装插件</p> <div class="language- extra-class"><pre class="language-text"><code>cnpm i @sentry/webpack-plugin --save-dev
+</code></pre></div><p>然后在根节点处创建文件.sentryclirc（标准配置文件的命名方式）</p> <div class="language- extra-class"><pre class="language-text"><code>[auth]
+token=token          // 无需引号
+
+[defaults]
+url = https://sentry.io
+org = 前面提到的组织名
+project = 前面提到的项目名
+</code></pre></div><p>token获取方式</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b1733b192b7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>如果没有token就注册一个</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b22ab6e0c00?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>在config文件夹中新建一个<code>sentry.env.js</code>，带上RELEASE_VERSION，用来标记上传的版本号</p> <div class="language- extra-class"><pre class="language-text"><code>const release = &quot;test@1.0.0&quot;;
+process.env.RELEASE_VERSION = release;
+module.exports = {
+  NODE_ENV: '&quot;sentry&quot;',
+  RELEASE_VERSION: `&quot;${release}&quot;`
+}
+
+</code></pre></div><p>注意写法，试了<code>'&quot;test@1.0.0&quot;'</code>不行，不知道为啥</p> <p>换成上面的即可</p> <p>然后在webpack.prod.conf中引入插件</p> <div class="language- extra-class"><pre class="language-text"><code>const SentryCliPlugin = require('@sentry/webpack-plugin')
+
+configureWebpack:{
+    plugins:[
+        new SentryCliPlugin({
+            include: &quot;./dist/&quot;, // 作用的文件夹，如果只想js报错就./dist/js
+            release: process.env.RELEASE_VERSION, // 一致的版本号
+            configFile: &quot;sentry.properties&quot;, // 不用改
+            ignore: ['node_modules', 'webpack.config.js'],
+            urlPrefix: &quot;~/&quot;,//这里指的你项目需要观测的文件如果你的项目有publicPath这里加上就对了
+         })
+    ]
+}
+</code></pre></div><p>在插件初始化的地方也要加上版本号 所以main.js也要改成</p> <div class="language- extra-class"><pre class="language-text"><code>Sentry.init({
+  dsn: 'XXX',
+  integrations: [new VueIntegration({Vue, attachProps: true})],
+  release: process.env.RELEASE_VERSION
+});
+</code></pre></div><p>这时打包，需要上传，时间比较久</p> <p>成功后去sentry上看看</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b34ea92ba96?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>这里我们看到这就是我们之前定义的项目名称，点击项目名称</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b37ee0ae520?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>这时候我们部署上去（这里测试可以在本地跑个服务，做个简单的报错比如abdc(),就会报abcd不是方法），报个错看看</p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b3b55d5eca3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p><img src="https://user-gold-cdn.xitu.io/2020/6/18/172c5b3c7700821f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>可以看到报错的源代码了，真香~</p> <p>上传了sourseMap后还存在一些问题，比如开发调试的时候，报错也会被收集，那么多错，我看的岂不是头都大了，同时开发时报错不会再显示，就会为开发造成困扰，这次我们着重解决这些问题。</p> <h3 id="正式环境与测试环境区分"><a href="#正式环境与测试环境区分" class="header-anchor">#</a> 正式环境与测试环境区分</h3> <p>先在package.json加条新命令</p> <div class="language- extra-class"><pre class="language-text"><code>&quot;build--sentry&quot;: &quot;cross-env NODE_ENV=sentry node -max_old_space_size=4096 build/build.js&quot;,
+</code></pre></div><p></p> <p>在main.js中sentry初始化时区分环境，如果不是正式环境就不在初始化就好;</p> <div class="language- extra-class"><pre class="language-text"><code>process.env.NODE_ENV === 'sentry' &amp;&amp; Sentry.init({
+  dsn: 'https://787297c8c01b45d2a6325edcc3c88275@o413596.ingest.sentry.io/5300418',
+  integrations: [new VueIntegration({Vue, attachProps: true})],
+  release: process.env.RELEASE_VERSION,
+  logErrors: false // 设置为true,错误不但会发给平台，也会在页面正常显示，方便调试（文档有）
+})
+</code></pre></div><p>同时在打包的时候，比如在测试环境，我不需要sourseMap，也不需要把代码上传到服务器（免得服务器上代码太乱），所以在webpack上也要最对应的修改：</p> <div class="language- extra-class"><pre class="language-text"><code>if(process.env.NODE_ENV === 'sentry') {
+  const SentryCliPlugin = require('@sentry/webpack-plugin')
+  plugins.push(
+    new SentryCliPlugin({
+      include: './dist/', // 作用的文件夹，如果只想js报错就./dist/js
+      release: process.env.RELEASE_VERSION, // 一致的版本号
+      configFile: 'sentry.properties', // 不用改
+      ignore: ['node_modules', 'webpack.config.js'],
+      urlPrefix: '~/share/green/',// 去掉根目录的文件路径，不写找不到map文件
+    })
+  )
+}
+</code></pre></div><p>其中plugins为webpackConfig中的plugins，提成数组，不然没法动态加</p> <p>同时将上文中开启sourcemap的地方都改为process.env.NODE_ENV === 'sentry'</p> <p>每次打包后还有个问题，就是map文件不需要上传到服务器，需要删除，手动又太麻烦，有webpack的插件可以只打包js，剔除map，但是还要自己解压一边，很麻烦，于是写了个命令行，直接删除</p> <p>新建记事本，写上下面代码后，后缀改为cmd即可</p> <div class="language- extra-class"><pre class="language-text"><code>del /f /s /q .\dist\*.map
+</code></pre></div><p>至此已经可以在线上使用了</p> <h3 id="搭建自己的sentry服务器"><a href="#搭建自己的sentry服务器" class="header-anchor">#</a> 搭建自己的sentry服务器</h3> <p>待续</p> <h2 id="搭建自己的前端监控"><a href="#搭建自己的前端监控" class="header-anchor">#</a> 搭建自己的前端监控</h2> <div class="language- extra-class"><pre class="language-text"><code>export default function errorHandler (Vue) {
+  const error = (e) =&gt; {
+    console.log(22222222, e, navigator.userAgent)
+  }
+  window.onerror = (msg, url, lineNo, columnNo, e) =&gt; {
+    if (msg === 'Script error.' || !url || e.type === '__skynet_wrapper__') return
+    error(e)
+  }
+  window.addEventListener('unhandledrejection', (e) =&gt; {
+    if (isObject(e.reason)) {
+      error(e.reason)
+    } else {
+      error(e.reason)
+    }
+  })
+  // const originAddEventListener = EventTarget.prototype.addEventListener
+  // EventTarget.prototype.addEventListener = (type, listener, options) =&gt; {
+  //   const wrappedListener = (...args) =&gt; {
+  //     try {
+  //       return listener.apply(this, args)
+  //     } catch (err) {
+  //       throw err
+  //     }
+  //   }
+  //   return originAddEventListener.call(this, type, wrappedListener, options)
+  // }
+  let vuePlugin = function (_Vue) {
+    if (!_Vue || !_Vue.config) {
+      return
+    }
+    const _oldOnError = _Vue.config.errorHandler
+    _Vue.config.errorHandler = function (errMsg, vm, info) {
+      error(errMsg)
+      if (typeof console !== 'undefined' &amp;&amp; typeof console.error === 'function') {
+        console.error(errMsg)
+      }
+      if (typeof _oldOnError === 'function') {
+        _oldOnError.call(this, errMsg, vm, info)
+      }
+    }
+  }
+  vuePlugin(Vue)
+  const captureBreadcrumb = function (obj) {
+    console.log('obj', obj)
+  }
+  const _breadcrumbEventHandler = (evtName) =&gt; {
+    let _lastCapturedEvent = ''
+    return function (evt) {
+      if (_lastCapturedEvent === evt) {
+        return
+      }
+      _lastCapturedEvent = evt
+      let target
+      try {
+        target = htmlTreeAsString(evt.target)
+      } catch (e) {
+        target = '&lt;unknown&gt;'
+      }
+      captureBreadcrumb({
+        category: `ui.${evtName}`,
+        message: target
+      })
+    }
+  }
+  function htmlTreeAsString (target) {
+    console.log('target', target)
+    return target.outerHTML
+  }
+  window.addEventListener('click', _breadcrumbEventHandler('click', false))
+  // setTimeout(() =&gt; {
+  //   const p = new Promise((resolve, reject) =&gt; reject('出错了'))
+  //   p.then(null)
+  // }, 1000)
+
+  const nativeAjaxSend = XMLHttpRequest.prototype.send // 首先将原生的方法保存。
+  const nativeAjaxOpen = XMLHttpRequest.prototype.open
+
+  XMLHttpRequest.prototype.open = function (mothod, url, ...args) { // 劫持open方法，是为了拿到请求的url
+    const xhrInstance = this
+    xhrInstance._url = url
+    nativeAjaxOpen.apply(this, [mothod, url].concat(args))
+  }
+
+  XMLHttpRequest.prototype.send = function (...args) { // 对于ajax请求的监控，主要是在send方法里处理。
+    const oldCb = this.onreadystatechange
+    // const oldErrorCb = this.onerror
+    const xhrInstance = this
+
+    xhrInstance.addEventListener('error', function (e) { // 这里捕获到的error是一个ProgressEvent。e.target 的值为 XMLHttpRequest的实例。当网络错误(ajax并没有发出去)或者发生跨域的时候，会触发XMLHttpRequest的error, 此时，e.target.status 的值为:0，e.target.statusText 的值为:''
+      const errorObj = {
+        error_msg: 'ajax filed',
+        error_stack: JSON.stringify({
+          status: e.target.status,
+          statusText: e.target.statusText
+        }),
+        error_native: e
+      }
+
+      /* 接下来可以对errorObj进行统一处理 */
+      captureBreadcrumb({
+        type: 'http',
+        category: `xhr`,
+        message: errorObj
+      })
+    })
+
+    xhrInstance.addEventListener('abort', function (e) { // 主动取消ajax的情况需要标注，否则可能会产生误报
+      if (e.type === 'abort') {
+        xhrInstance._isAbort = true
+      }
+    })
+
+    this.onreadystatechange = function (...innerArgs) {
+      if (xhrInstance.readyState === 4) {
+        if (!xhrInstance._isAbort &amp;&amp; xhrInstance.status !== 200) { // 请求不成功时，拿到错误信息
+          const errorObj = {
+            error_msg: JSON.stringify({
+              code: xhrInstance.status,
+              msg: xhrInstance.statusText,
+              url: xhrInstance._url
+            }),
+            error_stack: '',
+            error_native: xhrInstance
+          }
+
+          /* 接下来可以对errorObj进行统一处理 */
+          captureBreadcrumb({
+            type: 'http',
+            category: `xhr`,
+            message: errorObj
+          })
+        }
+      }
+      oldCb &amp;&amp; oldCb.apply(this, innerArgs)
+    }
+    nativeAjaxSend.apply(this, args)
+  }
+
+  function _captureUrlChange (lastHref, currentHref) {
+    console.log('hrefChange', lastHref, currentHref)
+  }
+  const oldOnPopState = window.onpopstate
+  let lastHref = ''
+  window.onpopstate = function (...args) {
+    let currentHref = location.href
+    _captureUrlChange(lastHref, currentHref)
+    lastHref = currentHref
+    if (oldOnPopState) {
+      oldOnPopState.apply(this, args)
+      oldOnPopState.apply(this, args)
+    }
+  }
+  // const consoleList = ['info', 'warn', 'error']
+  // let wrapConsoleMethod = (level, callback) =&gt; {
+  //   const nativeConsole = window.console[level]
+  //   window.console[level] = (...args) =&gt; {
+  //     callback &amp;&amp; callback(level, args)
+  //     nativeConsole.apply(this, args)
+  //   }
+  // }
+  // let consoleMethodCallback = function (level, ...args) {
+  //   captureBreadcrumb({
+  //     message: args,
+  //     level: level,
+  //     category: 'console'
+  //   })
+  // }
+  // consoleList.forEach((level) =&gt; {
+  //   wrapConsoleMethod(level, consoleMethodCallback)
+  // })
+}
+function isObject (value) {
+  const type = typeof value
+  return value != null &amp;&amp; (type === 'object' || type === 'function')
+}
+// function isFunction (value) {
+//   const type = typeof value
+//   return value != null &amp;&amp; type === 'function'
+// }
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/2020-09-20 面试总结.html" class="prev">
+        2020/09/20 面试总结
+      </a></span> <span class="next"><a href="/blog/2020-05-05 vue首屏优化.html">
+        vue首屏优化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d05c97c.js" defer></script><script src="/assets/js/2.52cbf88a.js" defer></script><script src="/assets/js/17.5281dcd6.js" defer></script>
+  </body>
+</html>

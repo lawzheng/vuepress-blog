@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { sep } = require('path');
 // 排除检查的文件
 var excludes = ['.DS_Store', 'README.md']
 
@@ -26,7 +27,7 @@ function generateDir(rpath, splitSymbol, menuType, sortType) {
             nameArr.shift();
             file = nameArr.join(' ');
 
-            const dirArr = rpath.split('\\')
+            const dirArr = rpath.split(sep)
             file = {
               text: file,
               link: `/${dirArr[dirArr.length - 1]}/${originName}`

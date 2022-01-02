@@ -3,6 +3,7 @@ const generateDir = require('./utils/generateDir.js');
 
 const blogList = generateDir(path.resolve(__dirname, '../blog'), ' ', 'sidebar', 'unshift');
 const bookList = generateDir(path.resolve(__dirname, '../book'), ' ', 'sidebar', 'unshift');
+const architectList = generateDir(path.resolve(__dirname, '../webArchitect'), ' ', 'sidebar', 'shift');
 
 module.exports = {
   title: "Lawz's blog",
@@ -20,13 +21,15 @@ module.exports = {
         items: generateDir(path.resolve(__dirname, '../cate'), '-', 'nav', 'shift')
       },
       {text: '阅读', link: `/book/${bookList[0]}`},
+      {text: 'web架构师', link: `/webArchitect/${architectList[0]}`},
       {text: 'Github', link: 'https://github.com/lawzheng'}      
     ],
     sidebarDepth: 2,
     sidebar: {
       '/cate/': 'auto',
       '/blog/': blogList,
-      '/book/': bookList
+      '/book/': bookList,
+      '/webArchitect/': architectList,
     }
   }
 };

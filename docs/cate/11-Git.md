@@ -134,3 +134,32 @@ git checkout -b localname origin/remotename
 git commit --amend
 ```
 
+
+
+## 设置代理
+
+**http/https代理**
+
+git config --global http.proxy http://127.0.0.1:8080
+
+git config --global https.proxy https://127.0.0.1:8080
+
+
+
+然后再git clone等命令就会自动走代理了。
+
+
+
+如果要取消代理：
+
+
+
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy
+
+
+
+查看配置信息：
+
+git config -l --global

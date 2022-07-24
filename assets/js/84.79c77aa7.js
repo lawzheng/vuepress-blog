@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[84],{506:function(t,n,s){"use strict";s.r(n);var e=s(70),i=Object(e.a)({},(function(){var t=this.$createElement,n=this._self._c||t;return n("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[n("p",[this._v("https://mp.weixin.qq.com/s/VSB4FnbEmH9yZ84pgRnaBw")])])}),[],!1,null,null,null);n.default=i.exports}}]);

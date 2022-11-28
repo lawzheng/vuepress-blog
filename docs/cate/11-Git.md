@@ -163,3 +163,22 @@ git config --global --unset https.proxy
 查看配置信息：
 
 git config -l --global
+
+
+
+## 生成patch
+
+```bash
+1.还未提交的修改
+git diff > commit.patch
+2.已提交的修改
+git diff 3da71ca35 8b5100cdcd > commit.patch
+注）3da71ca35 在8b5100cdcd 前面
+3.已经add但是未commit的修改
+git diff --cached > commit.patch
+4.检查patch是否可以应用
+git apply --check commit.patch
+5.打补丁
+git apply commit.patch
+```
+

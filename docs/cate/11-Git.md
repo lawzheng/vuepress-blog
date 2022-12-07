@@ -182,3 +182,31 @@ git apply --check commit.patch
 git apply commit.patch
 ```
 
+
+
+## 合并commit
+
+1. git log --oneline
+
+2. git rebase -i commitId
+
+   1,2,3  1，2合并需要用3的id
+
+3. 键盘敲i键进入insert模式
+
+   要合并的改为s
+
+4. 按esc、:wq保存 
+
+5. 不需要的commit信息#注释
+
+6. esc:wq保存生效
+
+7. 查看合并commit信息 git log --oneline
+
+8. git push -f 
+
+   不强制推不上去，要注意自己的分支才能这么搞
+
+9. 如果手残误操作，只要没走最后一步，可执行git rebase --abort放弃本次合并操作
+

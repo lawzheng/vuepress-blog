@@ -14,7 +14,7 @@ pnpm需要加个参数`pnpm link --global`，链接到全局去
 
 由于类库打出来的包是umd格式的，vite下会报错：
 
-![preview](.\images\v2-e6316bd48ca221740f4b99bff43159a2_r.jpg)
+![preview](/images/v2-e6316bd48ca221740f4b99bff43159a2_r.jpg)
 
 
 

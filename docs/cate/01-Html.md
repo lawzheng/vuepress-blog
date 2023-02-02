@@ -1,5 +1,35 @@
 # HTML
 
+## 语义化
+
+html 语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析。在没有引入样式 CCS 样式的时候也能以一种可以分辨出来大致表示内容的文档格式显示，并且是容易阅读的。
+
+
+
+ 搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
+
+
+
+无障碍
+
+
+
+```
+<article> 独立的区域
+<aside>	侧边栏
+<details> 可以展开收起的区域
+<figcaption>与其相关联的图片的说明/标题
+<figure> 图片
+<footer>	
+<header>
+<main>
+<mark> 突出的文本
+<nav>
+<section>  一节，一般来说会有包含一个标题。
+<summary> like detail
+<time> 时间
+```
+
 ## 多个字的字体连续放大的效果
 
 可以使用em单位实现相对于父级标签的字体放大或缩小(大于1即放大，小于1即缩小)
@@ -13,19 +43,28 @@
 ## HTML5存储类型
 
 - **cookie**: 最大 4k, 基本无兼容问题, 所有同源tab 共享, 每次请求都携带, key-value 存储, value 只存字符串
-- **sessionStorage** 无大小限制, 只在当前 tab 有效, tab 关闭即失效, key-value 存储, value 只存字符串
+- **sessionStorage** 无大小限制, 只在当前 tab 有效, tab 关闭即失效, key-value 存储, value 只存字符串，在当前页打开的新tab会复制一份。
 - **localStorage** 最大 5M-10M, 所有同源 tab 共享, 能持久化存储, key-value 存储, value 只存字符串
 - **indexDB** 无大小限制, key-value 存储,value 可以任意类型, 同源, 支持事务, 最大 250M, 兼容 ie10
 - **webSQL** 支持版本,事务,支持 sql 语句, 不兼容 ie
 
 
 
-- `cookie`: `expire` 和 `max-age` 都能控制数据的存储时间。`expire` 是一个绝对的过期时间，`max-age`是文档被访问之后的存活时间（是相对时间）。默认是 `session`。
+- `cookie`: `expire` 和 `max-age` 都能控制数据的存储时间。`expire` 是一个绝对的过期时间，`max-age`是文档被访问之后的存活时间（是相对时间）。`max-age` 优先级更高。
 - `sessionStorage`: 当会话被关闭后（浏览器、标签页被关闭），就会被清除。与 `localStorage` 用法一样。
 - `localStorage`: 除非被主动清除，不然永久储存在浏览器中。
 - `IndexedDB`: 没有过期时间，除非主动清除。
 
+### `localStorage`怎么设置过期时间
+封装一套方法，设置时自动带上`expire` 一个绝对的过期时间，取的时候判断是否过期，过期则删除并返回null
 
+
+### indexDB
+参考https://blog.csdn.net/yuyuking/article/details/118762576
+js写法，去创建数据库
+
+### webSQL
+相当于写sql去创建数据库，去取值
 
 ## 单词缩写
 
@@ -40,7 +79,8 @@
 ## 编辑页面
 
 - 让某个元素可以编辑，可以使用 `contenteditable` 属性。
-- 让整个页面可编辑可以使用 `document.designMode` 属性。 = on / off
+- 让整个页面可编辑可以使用 `document.designMode` 属性。 = on / off。或者`contenteditable`加在根元素。
+
 
 
 
@@ -64,6 +104,8 @@ input加下拉提示
   <option value="Volvo">
 </datalist>
 ```
+
+一般都使用封装的
 
 
 
@@ -107,16 +149,16 @@ output for input id 可将值输出
 
    ```
    <el-h1>
-         <h1>这是不支持shadow-dom的标题~</h1>
-       </el-h1>
+      <h1>这是不支持shadow-dom的标题~</h1>
+   </el-h1>
    ```
 
    ```
    if (document.body.createShadowRoot) {
-           let host = document.querySelector('el-h1')
-           let root = host.createShadowRoot()
-           root.innerHTML = '<h2 style="background-color: pink">woshilz</h2>'
-         }
+     let host = document.querySelector('el-h1')
+     let root = host.createShadowRoot()
+     root.innerHTML = '<h2 style="background-color: pink">woshilz</h2>'
+   }
    ```
 
    
@@ -127,9 +169,9 @@ output for input id 可将值输出
 
 ```
 <p>显示度量值：</p>
-    <meter value="3" min="0" max="10">2/10</meter><br>
-    <meter value="0.6">60%</meter>
-    <p><b>注释：</b>Internet Explorer 不支持 meter 标签。</p>
+<meter value="3" min="0" max="10">2/10</meter><br>
+<meter value="0.6">60%</meter>
+<p><b>注释：</b>Internet Explorer 不支持 meter 标签。</p>
 ```
 
 
@@ -162,6 +204,7 @@ rel="noopener"
 
 
 ## media=all
+媒体查询
 
 ```
 <link media="value">
@@ -180,12 +223,6 @@ rel="noopener"
 | all        | 适用于所有设备。                             |
 
 
-
-## 语义化
-
-1. 页面结构清晰
-2. 对无障碍阅读友好
-3. 利于seo
 
 ## input pattern
 

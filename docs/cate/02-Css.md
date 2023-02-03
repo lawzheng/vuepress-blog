@@ -131,6 +131,15 @@ dom.getBoundingClientRect().width/height
 }
 ```
 
+## flex
+
+### `flex-basis`与`width`的区别
+单独配，宽度就是配的那个
+都配了，哪个大用哪个（待确定）
+
+### `flex: 1`超出时
+将width设为0
+
 
 
 ## 三栏布局
@@ -223,6 +232,8 @@ body,html{
 }
 ```
 
+注意清除浮动
+
 
 
 **第4种 table**
@@ -253,6 +264,8 @@ body,html{
   background: red;
 }
 ```
+
+table布局性能开销大，不建议使用
 
 
 
@@ -287,7 +300,7 @@ body,html{
 
 CSS基本选择器包含ID选择器、类选择器、标签选择器、通配符选择器。
 
-- `!important` > 行内样式 > `#id` > `.class` > `tag` > * > 继承 > 默认
+- `!important` > 行内样式 > `#id` > `.class`、伪类 > `tag`、伪元素 > * > 继承 > 默认
 
   对应权重：10000>1000>100>10>1>0 
 
@@ -297,7 +310,7 @@ CSS基本选择器包含ID选择器、类选择器、标签选择器、通配符
 
   一般建议不超过三层
 
-- CSS 的覆盖顺序与标签内 class 定义的顺序无关，只与 style 中的顺序有关
+- CSS 的覆盖顺序与标签内 class 定义的顺序无关，只与 style 中加载的顺序有关
 
 - ```
   [class*=" ly-icon-"], [class^=ly-icon-]
@@ -388,10 +401,10 @@ CSS基本选择器包含ID选择器、类选择器、标签选择器、通配符
    ```
    .clearfix:after{/*伪元素是行内元素 正常浏览器清除浮动方法*/
    	content: "";
-   	display: block;
-       height: 0;
-       clear:both;
-       visibility: hidden;
+   	play: block;
+    height: 0;
+    clear:both;
+    visibility: hidden;
    }
    .clearfix{
    	*zoom: 1;/*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
@@ -432,6 +445,7 @@ position属性的重要性应该没啥可说的了。想必谁都回答的上来
 - `fixed` 固定定位，相对于浏览器窗口进行定位。
 - `static` 默认值。没有定位，元素出现在正常的流中。
 - `inherit` 规定应该从父元素继承 position 属性的值。
+- `sticky` 粘性布局，在视口时表现为relative，否则为fixed，注意兼容性s
 
 但是要注意一个问题，`absolute` 是相对于父元素的哪个属性进行定位的？通过下面的例子我们来看一看。
 
@@ -1072,20 +1086,20 @@ text-decoration   underline
 
 ```
 &:focus-within {
-      .input-title {
-        font-size: 0.24rem;
-        color: @mainColor;
-      }
-    }
+  .input-title {
+    font-size: 0.24rem;
+    color: @mainColor;
+  }
+}
 ```
 
 ### placeholder
 
 ```
 &.green::-webkit-input-placeholder{
-            color: @mainColor;
-            font-weight: 500;
-          }
+  color: @mainColor;
+  font-weight: 500;
+}
 ```
 
 

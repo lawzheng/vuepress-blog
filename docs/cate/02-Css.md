@@ -1,11 +1,18 @@
 # CSS
 
+补充：https://juejin.cn/post/6854573212337078285
+
+
+
 ## css且
+
 ```
 .c1.c2 {}
 ```
 
 ##  盒模型
+
+### 介绍
 
 一个盒子由内到外由四个部分组成：margin、border、padding、content
 
@@ -29,29 +36,178 @@ inherit：规定应从父元素继承box-sizing属性的值。
 
 
 
-**js获取宽高 **
+### 获取和设置盒模型的宽高
+
+- 第一种：
 
 dom.style.width/height
 
-只能获取到内联样式
+这种方法只能获取使用内联样式的元素的宽和高。
 
-
+- 第二种：
 
 dom.currentStyle.width/height
 
-ie的写法
+这种方法获取的是浏览器渲染以后的元素的宽和高，无论是用何种方式引入的css样式都可以，但只有IE浏览器支持这种写法。
 
-
+- 第三种：
 
 window.getComputedStyle(dom).width/height
 
-兼容性更好
+这种方法获取的也是浏览器渲染以后的元素的宽和高，但这种写法兼容性更好一些。
 
-
+- 第四种：
 
 dom.getBoundingClientRect().width/height
 
-最好
+这种方法经常使用的场所是，计算一个元素的绝对位置（相对于视窗左上角），它能拿到元素的left、top、width、height 4个属性。
+
+比如qTip
+
+
+
+### 去除inline-block元素间间距的N种方法
+
+1. 元素间留白间距出现的原因就是标签段之间的空格，因此，去掉HTML中的空格，自然间距就木有了。考虑到代码可读性，显然连成一行的写法是不可取的，我们可以：
+
+```html
+<div class="space">
+    <a href="##">
+    惆怅</a><a href="##">
+    淡定</a><a href="##">
+    热血</a>
+</div>
+```
+
+或者是：
+
+```html
+<div class="space">
+    <a href="##">惆怅</a
+    ><a href="##">淡定</a
+    ><a href="##">热血</a>
+</div>
+```
+
+或者是借助HTML注释：
+
+```html
+<div class="space">
+    <a href="##">惆怅</a><!--
+    --><a href="##">淡定</a><!--
+    --><a href="##">热血</a>
+</div>
+```
+
+不推荐
+
+
+
+
+
+
+
+2. 使用margin负值
+
+   margin负值的大小与上下文的字体和文字大小相关，其中，间距对应大小值可以参见我之前“基于display:inline-block的列表布局”一文part 6的统计表格：
+   ![图片](https://mmbiz.qpic.cn/mmbiz_png/FaeDdIfeuq6Jcrf1F9amot5V85cLUcmhdSjN0CUZSRQ8epOPezvhCYpmf7AjPSZ6zqibY0N0c2ibdVT74BsV5seA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+   例如，对于12像素大小的上下文，Arial字体的`margin`负值为`-3`像素，Tahoma和Verdana就是`-4`像素，而Geneva为`-6`像素。
+
+   由于外部环境的不确定性，以及最后一个元素多出的父margin值等问题，这个方法不适合大规模使用。
+
+   
+
+3. 不写结尾标签
+
+   有兼容性
+
+   ```html
+   <div class="space">
+       <a href="##">惆怅
+       <a href="##">淡定
+       <a href="##">热血
+   </div>
+   ```
+
+   肯定不推荐，idel都会报错
+
+   
+
+4. 父元素使用font-size:0
+
+   chrome现已取消最小12px的限制
+
+   这需要考虑会不会有别的影响
+
+   
+
+
+
+5. letter-spacing、word-spacing
+
+   一些骚操作，不推荐
+
+   
+
+6. flex等改变盒布局方式
+
+   一般都这样了，除非你要在ie等考虑兼容性的浏览器上
+
+
+
+### 行内元素可以设置padding，margin吗？
+
+宽高不起作用
+
+padding左右正常，
+
+上占实际位置，会置于上层，盖住前面的元素
+
+下不占实际位置，但是会置于图层下面
+
+![image-20220203174719547](/images/image-20220203174719547.png)
+
+margin 左右可，上下无
+
+
+
+### padding 百分比
+
+根据**父元素**的**宽度**计算
+
+是父元素，不是自己
+
+
+
+为什么不根据自己的宽度呢？而要根据父元素？
+
+1. 如果自己没宽度怎么算
+2. 算了自己的，自己不又变大了，死循环
+
+
+
+## 怪异模式和标准模式有什么区别
+
+所谓的标准模式是指，浏览器按W3C标准解析执行代码；
+
+怪异模式则是使用浏览器自己的方式解析执行代码，因为不同浏览器解析执行的方式不一样，所以我们称之为怪异模式。
+
+浏览器解析时到底使用标准模式还是怪异模式，与你网页中的DTD声明直接相关，DTD声明定义了标准文档的类型（标准模式解析）文档类型，会使浏览器使用相应的方式加载网页并显示，忽略DTD声明,将使网页进入怪异模式(quirks mode)。
+
+
+
+*dtd*一般指文档类型定义。 文档类型定义（*DTD*，Document Type Definition）
+
+html头部的这个
+
+```html
+<!DOCTYPE html>
+```
+
+这是html5的定义
+
+
 
 
 
@@ -131,14 +287,198 @@ dom.getBoundingClientRect().width/height
 }
 ```
 
+
+
 ## flex
 
+### flex-direction
+
+方向 row column
+
+
+
+### flex-wrap
+
+换行方式 倒着换行等
+
+
+
+`flex-direction` 和 `flex-wrap` 可以简写成 **`flex-flow`** 。 `flex-flow` 使用时可以只显式设置一个值，也可以显式设置两个值：
+
+- `flex-flow` 只显式设置一个值，并且该值和 `<flex-direction>` 相匹配时， `flex-wrap` 会取值 `initial`
+- `flex-flow` 只显式设置一个值，并且该值和 `<flex-wrap>`相匹配时， `flex-direction` 会取值 `initial`
+- `flex-flow` 显式设置两个值时， `flex-direction` 和 `flow-wrap` 没有先后顺序之分，即可 `flex-flow: column wrap` 和 `flex-flow: wrap column` 等同
+
+
+
+### justify-content
+
+主轴方向的对齐方式
+
+![img](E:\codee\VuePress-blog\docs\webArchitect\images\ad858777d27a4e34ae5c3bda0f88fe63~tplv-k3u1fbpfcp-watermark.awebp)
+
+`space-between` 会让第一个Flex项目的盒子起始边缘与Flex容器主轴起点相稳合，最后一个Flex项目的盒子结束边缘与Flex容器主轴终点相稳合，其它相邻Flex项目之间间距相等。当Flex容器中只有一个Flex项目时，其表现行为和 `flex-start` 等同
+
+`space-around` 会让第一个Flex项目的盒子起始边缘与Flex容器主轴起点间距和最后一个Flex项目的盒子结束边缘与Flex容器主轴终点间距相等，并且等于其他相邻两个Flex项目之间间距的一半。当Flex容器中只有一个Flex项目时，其表现行为和 `center` 等同
+
+`space-evenly` 会让第一个Flex项目的盒子起始边缘与Flex容器主轴起点间距和最后一个Flex项目的盒子结束边缘与Flex容器主轴终点间距相等，并且等于其他相邻两个Flex项目之间间距。当Flex容器中只有一个Flex项目时，其表现行为和 `center` 等同
+
+
+
+### align-items
+
+侧轴方向对齐
+
+![img](E:\codee\VuePress-blog\docs\webArchitect\images\191245d917d2496baefa79f9a471039d~tplv-k3u1fbpfcp-watermark.awebp)
+
+
+
+
+
 ### `flex-basis`与`width`的区别
+
 单独配，宽度就是配的那个
 都配了，哪个大用哪个（待确定）
 
+
+
 ### `flex: 1`超出时
 将width设为0
+
+
+
+## grid
+
+比flex强大很多
+
+网格系统，相当于二维的布局
+
+有兼容问题，用得少
+
+
+
+### 基础用法
+
+```html
+<div class="wrapper">
+  <div class="one item">One</div>
+  <div class="two item">Two</div>
+  <div class="three item">Three</div>
+  <div class="four item">Four</div>
+  <div class="five item">Five</div>
+  <div class="six item">Six</div>
+</div>
+```
+
+
+
+```css
+.wrapper {
+  margin: 60px;
+  /* 声明一个容器 */
+  display: grid;
+  /*  声明列的宽度  */
+  grid-template-columns: repeat(3, 200px);
+  /*  声明行间距和列间距  */
+  grid-gap: 20px 50px;
+  /*  声明行的高度  */
+  grid-template-rows: 100px 200px;
+}
+.one {
+  background: #19CAAD;
+}
+.two { 
+  background: #8CC7B5;
+}
+.three {
+  background: #D1BA74;
+}
+.four {
+  background: #BEE7E9;
+}
+.five {
+  background: #E6CEAC;
+}
+.six {
+  background: #ECAD9E;
+}
+.item {
+  text-align: center;
+  font-size: 200%;
+  color: #fff;
+}
+```
+
+
+
+![img](E:\codee\VuePress-blog\docs\webArchitect\images\173895918bfd94e9~tplv-t2oaga2asx-watermark.awebp)
+
+通过`grid-template-columns` 和 `grid-template-rows`来控制行和列
+
+
+
+
+
+### **fr 关键字**
+
+`Grid` 布局还引入了一个另外的长度单位来帮助我们创建灵活的网格轨道。`fr` 单位代表网格容器中可用空间的一等份。`grid-template-columns: 200px 1fr 2fr` 表示第一个列宽设置为 200px，后面剩余的宽度分为两部分，宽度分别为剩余宽度的 1/3 和 2/3。代码以及效果如下图所示：
+
+```
+.wrapper-3 {
+  display: grid;
+  grid-template-columns: 200px 1fr 2fr;
+  grid-gap: 5px;
+  grid-auto-rows: 50px;
+}
+```
+
+
+
+![image](E:\codee\VuePress-blog\docs\webArchitect\images\17389591ccc256d1~tplv-t2oaga2asx-watermark.awebp)
+
+
+
+### **minmax() 函数**
+
+我们有时候想给网格元素一个最小和最大的尺寸
+
+`grid-template-columns: 1fr 1fr minmax(300px, 2fr)` 的意思是，第三个列宽最少也是要 300px，但是最大不能大于第一第二列宽的两倍
+
+
+
+### 位置处理
+
+justify-items 、align-items
+
+```
+start | end | center | stretch;
+```
+
+
+
+看起来是改变内部元素（文字等）的左中右。而不是该元素的位置
+
+
+
+justify-content 、align-content
+
+```
+start | end | center | stretch | space-around | space-between | space-evenly;
+```
+
+这就跟flex的差不多，只是名字有点区别
+
+
+
+
+
+### 兼容性
+
+![img](E:\codee\VuePress-blog\docs\webArchitect\images\17389592fa541366~tplv-t2oaga2asx-watermark.awebp)
+
+兼容不太好，用的也不多
+
+适合瀑布流的布局
 
 
 
@@ -292,19 +632,85 @@ table布局性能开销大，不建议使用
 
 
 
+## 选择器
+
+1. *匹配所有
+
+   不建议直接使用，影响性能，每个元素都会带上。
+
+   看了reset.css，是用具体标签做初始化的。
+
+2. #id
+
+   不常用，一般都是用class，id用来js获取元素
+
+3. .class
+
+4. li a
+
+   后代选择器，不建议层级过多
+
+5. 单个元素选择器
+
+6. X:visited and X:link
+
+   ```css
+   a:link { color: red; }
+   a:visted { color: purple; }
+   ```
+
+   我们使用`:link`伪类来定义所有还没点击的链接。
+
+   另外还有`:visited`伪类可以让我们给*曾经*点击过或者*访问过*的链接添加样式。
+
+7. x + y
+
+   后面的第一个元素
+
+8. x > y
+
+   直接的子代
+
+9. x ~ y
+
+   后面的元素
+
+10. X[title]、 X[href="foo"]
+
+    属性选择器，
+
+11. X:checked
+
+12. X:after
+
+13. X:hover
+
+14. X:not(selector)
+
+    过滤某个
+
+15. X:nth-child(n)
+
+    从1开始
+
+16. X:nth-last-child(n)
 
 
 
+## 权重计算方式
 
-## CSS权重计算方式
+| 选择器               | 权重值 |
+| :------------------- | :----- |
+| !important标识       | 10000  |
+| 行内样式             | 1000   |
+| id选择器             | 100    |
+| 类、伪类、属性选择器 | 10     |
+| 标签选择器           | 1      |
+| 通配符 *             | 0      |
+
+
 
 CSS基本选择器包含ID选择器、类选择器、标签选择器、通配符选择器。
-
-- `!important` > 行内样式 > `#id` > `.class`、伪类 > `tag`、伪元素 > * > 继承 > 默认
-
-  对应权重：10000>1000>100>10>1>0 
-
-  所有的加起来进行比较，当然，有important就不用比较了
 
 - 选择器 **从右往左** 解析
 
@@ -320,18 +726,17 @@ CSS基本选择器包含ID选择器、类选择器、标签选择器、通配符
 
   
 
-**各选择器权值：**
-
-- 内联样式，权值为1000
-- ID选择器，权值为0100
-- 类，伪类和属性选择器，权值为0010
-- 标签选择器和伪元素选择器，权值为0001
-- 通配符、子选择器、相邻选择器等，权值为0000
-- 继承的样式没有权值
-
 **比较方式：**
 
 如果层级相同，继续往后比较，如果层级不同，层级高的权重大，不论低层级有多少个选择器。
+
+
+
+### !important在什么场景用
+
+换肤之类的
+
+实在不好改了的时候才用，不然还是加多几个选择器去增加权重
 
 
 
@@ -533,19 +938,25 @@ CSS3中新增了一个 `position:sticky` 属性，该属性的作用类似 `posi
 
 
 
+## 有哪些引入方式？通过link和@import引入有什么区别？
+
+- **CSS引入方式有4种** 内联、内嵌、外链、导入
+
+  内联：直接写在html标签上
+
+  内嵌：html中写style标签内
+
+- **外链 link** 除了可以加载css之外,还可以定义rss、rel等属性，没有兼容性问题，支持使用javascript改变样式
+
+- **导入@import** 是css提供的，只能用于加载css，不支持通过javascript修改样式
+
+- 页面被加载的时候，link会被同时加载，而@import则需等到页面加载完后再加载，可能出现无样式网页
 
 
 
+如今在打包的条件下（webpack等），会将import的css编译成一份css并通过link引入，所以用这种写法没什么问题。
 
-## link 与 @import 的区别
 
-`link`功能较多，可以定义 RSS，定义 Rel 等作用，而`@import`只能用于加载 css
-
-当解析到`link`时，页面会同步加载所引的 css，而`@import`所引用的 css 会等到页面加载完才被加载
-
-`@import`需要 IE5 以上才能使用
-
-`link`可以使用 js 动态引入，`@import`不行
 
 
 
@@ -691,7 +1102,7 @@ will-change: unset;
 
 
 
-### 动画
+### 具体写法
 
 #### 重新开始动画
 
@@ -766,6 +1177,63 @@ animation-play-state: paused
 
 
 
+### Lottie 动画
+
+方便设计师直接从ae导出json的动画，跨端使用
+
+用的svg或者canvas，比直接操作div性能要更好
+
+
+
+### 低端机上用 CSS 动画做么
+
+效果复杂的话可能会卡顿，可以通过translate3d之类的开启gpu来提高性能。
+
+用定位等脱离文档流的属性，减少回流
+
+
+
+### 题目
+
+**写个动画，一个盒子，开始时缩放是 0，50%时是 1，100%时是 0，开始结束都是慢速，持续 2 秒，延迟 2 秒，结束后固定在结束的效果**
+
+
+
+```css
+.left {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  animation: left linear 2s 2s alternate;
+}
+@keyframes left {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+```
+
+
+
+**一个地球本身在自转，外面有个飞机围着它转，飞机的螺旋桨自己也在转，有哪些需要考虑的点**
+
+骨骼动画：需要联动的部分需要考虑dom结构
+
+用transform做动画，减少回流
+
+开启gpu
+
+
+
 
 
 ## border
@@ -779,6 +1247,69 @@ animation-play-state: paused
 
 
 感觉border:0px浏览器解析并给border-width设置0px这个值；border:none浏览器解析后会给border-style设置为none；浏览器会先分析border的style再分析width，所以我感觉border:none会比border:0px节省性能(最后一点我猜的)
+
+
+
+### 颜色
+
+冷知识
+
+没设置边框颜色时取color的
+
+
+
+## css单位适配
+
+### rem
+
+```js
+(function(doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+```
+
+
+
+px2rem
+
+结合webpack的插件，实现编译阶段将px自动转为rem
+
+
+
+原理
+
+根据html节点的字体大小做1rem
+
+
+
+ie9+支持
+
+
+
+### vw、vh
+
+根据屏幕的百分比
+
+1vw = 1/100 屏幕宽度
+
+ie11才支持
+
+
+
+### rpx
+
+小程序用的
+
+
 
 
 
@@ -1150,6 +1681,16 @@ IE7识别*, 不识别_，识别 !important
 
 
 
+## 切换主题色
+
+https://www.cnblogs.com/leiting/p/11203383.html
+
+1. 写多份颜色样式，通过js切换link
+2. less有个修改less变量的功能
+3. css有个var(--themeColor)，通过js切换这个变量即可
+
+
+
 ## 技巧类
 
 ### 三角形
@@ -1275,30 +1816,89 @@ background: radial-gradient(#fff 0%, rgba(255, 255, 255, .3) 35%, rgba(255, 255,
 
 ### 1px边框
 
-用伪元素实现
+1、用图片、不方便
+
+2、动态改变viewport的缩放比例
+
+```css
+	
+<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
 
 ```
-.border-top {
-  position: relative;
-  &::before {
+
+```js
+// js获取
+// 通过id找到后修改.content
+
+// 或者document.getElementsByTagName('meta')，找出所有meta，再根据getAttribute('name') 循环找出viewport
+```
+
+
+
+3、伪类 + transform
+
+原理是把原先元素的 border 去掉，然后利用 `:before` 或者 `:after` 重做 border ，并 transform 的 scale 缩小一半，原先的元素相对定位，新做的 border 绝对定位
+
+- 单条 border
+
+```css
+.hairlines li{
+    position: relative;
+    border:none;
+}
+.hairlines li:after{
     content: '';
     position: absolute;
     left: 0;
-    right: 0;
-    top: 0;
+    background: #000;
+    width: 100%;
     height: 1px;
-    background: #e4e4e4;
-    transform: scaleY(0.5);
-    transform-origin: 0 50%;	// 改变基点
-  }
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+}
+
+```
+
+- 四条 border
+
+```css
+.hairlines li{
+    position: relative;
+    margin-bottom: 20px;
+    border:none;
+}
+.hairlines li:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
 }
 ```
 
-更多方案
+样式使用的时候，也要结合 JS 代码，判断是否 Retina 屏
 
-https://www.imooc.com/article/45990
+```js
+if(window.devicePixelRatio && devicePixelRatio >= 2){
+    document.querySelector('ul').className = 'hairlines';
+}
+```
 
-伪元素和viewport + rem完美些
+可以支持圆角
+
+
+
+改viewport会影响整个页面，老项目还是得用伪类解决。
 
 
 

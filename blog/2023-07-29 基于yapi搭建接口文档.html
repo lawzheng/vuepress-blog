@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于yapi搭建接口文档 | Lawz&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vuepress-blog/logo.jpg">
+    <meta name="description" content="罗政的个人博客">
+    
+    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.a53365af.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.de87c580.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.86d89517.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/7.3cb45aa9.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/10.b2e2702b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/100.769669bd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/101.cbd5589e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/102.e50aaa8d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/103.11f00407.js"><link rel="prefetch" href="/vuepress-blog/assets/js/104.3c6cb434.js"><link rel="prefetch" href="/vuepress-blog/assets/js/105.02d9be1c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/106.58e03f1c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/11.5799724e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/12.e49c3107.js"><link rel="prefetch" href="/vuepress-blog/assets/js/13.4ffb714e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/14.b082a5a2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/15.fb2ad981.js"><link rel="prefetch" href="/vuepress-blog/assets/js/16.855749a2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/17.d922d36f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/18.4711dea9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/19.48c643c7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/20.22ba90e1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/21.b59e79d7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/22.a5300344.js"><link rel="prefetch" href="/vuepress-blog/assets/js/23.68e39436.js"><link rel="prefetch" href="/vuepress-blog/assets/js/24.a99851c2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/25.aaf77734.js"><link rel="prefetch" href="/vuepress-blog/assets/js/26.f237ce73.js"><link rel="prefetch" href="/vuepress-blog/assets/js/27.96312d5b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/28.29eb2df7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/29.2c5a509f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/3.8e4013cc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/30.b11787fd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/31.ff194656.js"><link rel="prefetch" href="/vuepress-blog/assets/js/32.e8ff16a9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/33.74bf74ae.js"><link rel="prefetch" href="/vuepress-blog/assets/js/34.bc480864.js"><link rel="prefetch" href="/vuepress-blog/assets/js/35.fc05bd95.js"><link rel="prefetch" href="/vuepress-blog/assets/js/36.79f34ed7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/37.ba7ad95a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/38.71a7423b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/39.a79bc36f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.8f3965f1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/40.3fba58fb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/41.1bbfe740.js"><link rel="prefetch" href="/vuepress-blog/assets/js/42.ea151be6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/43.530a4f34.js"><link rel="prefetch" href="/vuepress-blog/assets/js/44.1192d919.js"><link rel="prefetch" href="/vuepress-blog/assets/js/45.a05fdcd7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/46.2d8add9d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/47.929dbff5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/48.779841a5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/49.9b6b12ce.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.c829752b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/50.468d3901.js"><link rel="prefetch" href="/vuepress-blog/assets/js/51.8168cc01.js"><link rel="prefetch" href="/vuepress-blog/assets/js/52.7333dbed.js"><link rel="prefetch" href="/vuepress-blog/assets/js/53.f678c848.js"><link rel="prefetch" href="/vuepress-blog/assets/js/54.64e31343.js"><link rel="prefetch" href="/vuepress-blog/assets/js/55.eb36f4b3.js"><link rel="prefetch" href="/vuepress-blog/assets/js/56.d5c1a090.js"><link rel="prefetch" href="/vuepress-blog/assets/js/57.3e024332.js"><link rel="prefetch" href="/vuepress-blog/assets/js/58.c3c0cd21.js"><link rel="prefetch" href="/vuepress-blog/assets/js/59.27c67c12.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.1734079a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/60.e7a20d44.js"><link rel="prefetch" href="/vuepress-blog/assets/js/61.e20bcaae.js"><link rel="prefetch" href="/vuepress-blog/assets/js/62.49c08790.js"><link rel="prefetch" href="/vuepress-blog/assets/js/63.4369fef3.js"><link rel="prefetch" href="/vuepress-blog/assets/js/64.272a8509.js"><link rel="prefetch" href="/vuepress-blog/assets/js/65.62540198.js"><link rel="prefetch" href="/vuepress-blog/assets/js/66.93cccc91.js"><link rel="prefetch" href="/vuepress-blog/assets/js/67.c6357c80.js"><link rel="prefetch" href="/vuepress-blog/assets/js/68.f71ecc42.js"><link rel="prefetch" href="/vuepress-blog/assets/js/69.91462914.js"><link rel="prefetch" href="/vuepress-blog/assets/js/70.a27ea378.js"><link rel="prefetch" href="/vuepress-blog/assets/js/71.1ae55786.js"><link rel="prefetch" href="/vuepress-blog/assets/js/72.32b1e1eb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/73.80ea5133.js"><link rel="prefetch" href="/vuepress-blog/assets/js/74.6417aa7d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/75.275fd86a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/76.5cd7aa9b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/77.2fa88108.js"><link rel="prefetch" href="/vuepress-blog/assets/js/78.2aca1c6a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/79.232a8159.js"><link rel="prefetch" href="/vuepress-blog/assets/js/8.243e2216.js"><link rel="prefetch" href="/vuepress-blog/assets/js/80.9b8a4cbe.js"><link rel="prefetch" href="/vuepress-blog/assets/js/81.cdee208f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/82.11d92675.js"><link rel="prefetch" href="/vuepress-blog/assets/js/83.8257545c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/84.ff901186.js"><link rel="prefetch" href="/vuepress-blog/assets/js/85.e8be1ee8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/86.58daf830.js"><link rel="prefetch" href="/vuepress-blog/assets/js/87.9d588e5e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/88.346a3435.js"><link rel="prefetch" href="/vuepress-blog/assets/js/89.475ff4ca.js"><link rel="prefetch" href="/vuepress-blog/assets/js/9.f07624a6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/90.61128615.js"><link rel="prefetch" href="/vuepress-blog/assets/js/91.688d1969.js"><link rel="prefetch" href="/vuepress-blog/assets/js/92.85fdea93.js"><link rel="prefetch" href="/vuepress-blog/assets/js/93.0323d958.js"><link rel="prefetch" href="/vuepress-blog/assets/js/94.fd8c3477.js"><link rel="prefetch" href="/vuepress-blog/assets/js/95.d7404f30.js"><link rel="prefetch" href="/vuepress-blog/assets/js/96.529047c8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/97.bb0e97d6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/98.345f0deb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/99.d8a09cce.js">
+    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.a53365af.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-blog/" class="home-link router-link-active"><!----> <span class="site-name">Lawz's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress-blog/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="/vuepress-blog/webArchitect/01-架构师思维.html" class="nav-link">
+  web架构师
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识分类" class="dropdown-title"><span class="title">知识分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="知识分类" class="mobile-dropdown-title"><span class="title">知识分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/01-Html.html" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/02-Css.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/03-Js.html" class="nav-link">
+  Js
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/04-Browser.html" class="nav-link">
+  Browser
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/05-Vue.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/06-React.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/07-Node.html" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/08-RegEx.html" class="nav-link">
+  RegEx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/09-IDE.html" class="nav-link">
+  IDE
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/10-算法.html" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/11-Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/12-Nginx.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/13-Typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/14-webpack.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/15-小程序.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/16-Hybird.html" class="nav-link">
+  Hybird
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/17-安全.html" class="nav-link">
+  安全
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/18-面试.html" class="nav-link">
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/19-网络.html" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/cate/20-知识回顾.html" class="nav-link">
+  知识回顾
+</a></li></ul></div></div><div class="nav-item"><a href="/vuepress-blog/book/2021-03-28 香帅财富报告.html" class="nav-link">
+  阅读
+</a></div><div class="nav-item"><a href="/vuepress-blog/webArchitect/01-架构师思维.html" class="nav-link">
+  web架构师
+</a></div><div class="nav-item"><a href="https://github.com/lawzheng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html" class="active sidebar-link">基于yapi搭建接口文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#功能介绍" class="sidebar-link">功能介绍</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#部署" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#php转swagger" class="sidebar-link">php转swagger</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#自动同步接口文档" class="sidebar-link">自动同步接口文档</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#接口转ts请求代码" class="sidebar-link">接口转ts请求代码</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/blog/2023-07-29 基于yapi搭建接口文档.html#mock数据" class="sidebar-link">mock数据</a></li></ul></li><li><a href="/vuepress-blog/blog/2023-02-12 笔记.html" class="sidebar-link">笔记</a></li><li><a href="/vuepress-blog/blog/2023-02-04 基于X6.js封装流程图.html" class="sidebar-link">基于X6.js封装流程图</a></li><li><a href="/vuepress-blog/blog/2023-01-06 新手指引的封装.html" class="sidebar-link">新手指引组件封装</a></li><li><a href="/vuepress-blog/blog/2022-10-13 基于G6.js封装拓扑图插件.html" class="sidebar-link">基于G6.js封装拓扑图插件</a></li><li><a href="/vuepress-blog/blog/2022-09-28 拓扑图实现导出大数据量时的图片.html" class="sidebar-link">拓扑图实现导出大数据量时的图片</a></li><li><a href="/vuepress-blog/blog/2022-09-22 ext实现预览组件.html" class="sidebar-link">ext实现预览组件</a></li><li><a href="/vuepress-blog/blog/2022-07-25 vite下去link链接npm包的问题解决.html" class="sidebar-link">vite下去link npm包的问题解决</a></li><li><a href="/vuepress-blog/blog/2022-07-24 包管理器对比.html" class="sidebar-link">包管理器对比</a></li><li><a href="/vuepress-blog/blog/2022-06-25 项目添加husky.html" class="sidebar-link">项目添加husky</a></li><li><a href="/vuepress-blog/blog/2022-06-16 拓扑图实现类似xmind收缩效果.html" class="sidebar-link">拓扑图实现类似xmind收缩效果</a></li><li><a href="/vuepress-blog/blog/2022-05-23 win7下跑高版本node.js项目.html" class="sidebar-link">win7下跑高版本node.js项目</a></li><li><a href="/vuepress-blog/blog/2022-05-17 控制器自动打包拓扑图项目代码.html" class="sidebar-link">控制器自动打包拓扑图项目代码</a></li><li><a href="/vuepress-blog/blog/2022-04-07 控制器提示弹窗组件增加自定义按钮功能.html" class="sidebar-link">控制器提示弹窗组件增加自定义按钮功能</a></li><li><a href="/vuepress-blog/blog/2022-03-29 控制器增加页面统一提示组件.html" class="sidebar-link">控制器增加页面统一提示组件</a></li><li><a href="/vuepress-blog/blog/2022-03-21 控制器中实现按需加载组件.html" class="sidebar-link">控制器中实现按需加载组件</a></li><li><a href="/vuepress-blog/blog/2022-02-13 vuepress升vitepress.html" class="sidebar-link">vuepress升vitepress</a></li><li><a href="/vuepress-blog/blog/2022-02-12 本地环境npm打包后自动传到服务器.html" class="sidebar-link">本地环境npm打包后自动传到服务器</a></li><li><a href="/vuepress-blog/blog/2022-01-25 G6.js 性能优化.html" class="sidebar-link">G6.js 性能优化</a></li><li><a href="/vuepress-blog/blog/2022-01-17 深信服前端大会.html" class="sidebar-link">深信服前端大会</a></li><li><a href="/vuepress-blog/blog/2022-01-02 vuePress博客自动构建gitpage.html" class="sidebar-link">vuePress博客自动构建gitpage</a></li><li><a href="/vuepress-blog/blog/2021-12-02 N合一版本总结.html" class="sidebar-link">N合一版本总结</a></li><li><a href="/vuepress-blog/blog/2021-12-01 控制器中交换机代码优化.html" class="sidebar-link">控制器中交换机代码优化</a></li><li><a href="/vuepress-blog/blog/2021-11-27 升win11指南.html" class="sidebar-link">升win11指南</a></li><li><a href="/vuepress-blog/blog/2021-11-25 xmind转自测系统导入.html" class="sidebar-link">xmind转自测系统导入格式</a></li><li><a href="/vuepress-blog/blog/2021-11-24 自动寻找未翻译文字.html" class="sidebar-link">自动寻找未翻译文字</a></li><li><a href="/vuepress-blog/blog/2021-08-31 vue2升vue3笔记.html" class="sidebar-link">vue2升vue3笔记</a></li><li><a href="/vuepress-blog/blog/2021-08-06 自动检测页面缺失依赖及自动测试页面是否报错.html" class="sidebar-link">自动检测页面缺失依赖及自动测试页面是否报错</a></li><li><a href="/vuepress-blog/blog/2021-07-13 webpack5踩坑记录.html" class="sidebar-link">webpack5踩坑记录</a></li><li><a href="/vuepress-blog/blog/2021-07-05 手写qtip插件.html" class="sidebar-link">手写qtip插件</a></li><li><a href="/vuepress-blog/blog/2021-06-30 web端首页优化.html" class="sidebar-link">web端首页优化</a></li><li><a href="/vuepress-blog/blog/2021-06-21 gulp手写注入插件.html" class="sidebar-link">gulp手写注入插件</a></li><li><a href="/vuepress-blog/blog/2021-06-19 vue3笔记.html" class="sidebar-link">Vue3</a></li><li><a href="/vuepress-blog/blog/2021-06-10 js手写代码系列.html" class="sidebar-link">js手写代码系列</a></li><li><a href="/vuepress-blog/blog/2021-06-04 魔改G6.js imageMinimap.html" class="sidebar-link">魔改G6 imageMinimap</a></li><li><a href="/vuepress-blog/blog/2021-06-01 js处理时区问题.html" class="sidebar-link">js处理时区问题</a></li><li><a href="/vuepress-blog/blog/2021-06-01 js处理大数据不卡顿.html" class="sidebar-link">js处理大数据不卡顿</a></li><li><a href="/vuepress-blog/blog/2021-04-27 ext Debug模式下鼠标hover组件名.html" class="sidebar-link">ext Debug模式下鼠标hover组件名</a></li><li><a href="/vuepress-blog/blog/2021-04-19 ext实现轮播图组件.html" class="sidebar-link">ext实现轮播图组件</a></li><li><a href="/vuepress-blog/blog/2021-03-19 ext动态更改表格列项.html" class="sidebar-link">ext动态更改表格列项</a></li><li><a href="/vuepress-blog/blog/2021-01-29 优化复制功能.html" class="sidebar-link">优化复制功能</a></li><li><a href="/vuepress-blog/blog/2021-01-19 ext仿vue mixin效果.html" class="sidebar-link">ext仿vue mixin效果</a></li><li><a href="/vuepress-blog/blog/2020-12-22 仿赛博朋克按钮效果.html" class="sidebar-link">仿赛博朋克按钮效果</a></li><li><a href="/vuepress-blog/blog/2020-12-22 node搭配腾讯云函数自动发邮件.html" class="sidebar-link">node搭配腾讯云函数自动发邮件</a></li><li><a href="/vuepress-blog/blog/2020-12-19 谈下网站水印.html" class="sidebar-link">谈下网站水印</a></li><li><a href="/vuepress-blog/blog/2020-12-17 禁止浏览器打开控制台.html" class="sidebar-link">禁止浏览器打开控制台</a></li><li><a href="/vuepress-blog/blog/2020-12-03 gulp 本地调试增加代理及热更新.html" class="sidebar-link">gulp 本地调试增加代理及热更新</a></li><li><a href="/vuepress-blog/blog/2020-11-24 手写表格列宽度拖动.html" class="sidebar-link">背景</a></li><li><a href="/vuepress-blog/blog/2020-11-17 node.js读取文件，添加依赖.html" class="sidebar-link">node.js读取文件，添加依赖</a></li><li><a href="/vuepress-blog/blog/2020-10-19 近期面试总结.html" class="sidebar-link">开篇</a></li><li><a href="/vuepress-blog/blog/2020-09-24 基于高德搭建选址组件.html" class="sidebar-link">基于高德搭建选址组件</a></li><li><a href="/vuepress-blog/blog/2020-09-21 拦截复制事件并替换图片url.html" class="sidebar-link">拦截复制事件并替换图片url</a></li><li><a href="/vuepress-blog/blog/2020-09-20 面试总结.html" class="sidebar-link">2020/09/20 面试总结</a></li><li><a href="/vuepress-blog/blog/2020-07-04 搭建前端监控系统.html" class="sidebar-link">搭建前端监控系统</a></li><li><a href="/vuepress-blog/blog/2020-05-05 vue首屏优化.html" class="sidebar-link">vue首屏优化</a></li><li><a href="/vuepress-blog/blog/2020-04-23 video兼容处理.html" class="sidebar-link">video兼容处理</a></li><li><a href="/vuepress-blog/blog/2020-04-05 vue路由改造.html" class="sidebar-link">记一次vue路由改造</a></li><li><a href="/vuepress-blog/blog/2020-04-03 vue图片预览插件v-viewer使用.html" class="sidebar-link">图片预览组件</a></li><li><a href="/vuepress-blog/blog/2020-03-07 骨架屏实验.html" class="sidebar-link">骨架屏实验 vue-content-loader</a></li><li><a href="/vuepress-blog/blog/2020-03-07 记录下写博客所需工具.html" class="sidebar-link">写博客工具</a></li><li><a href="/vuepress-blog/blog/2020-03-02 根据轮播图改变背景色.html" class="sidebar-link">根据轮播图改变背景色</a></li><li><a href="/vuepress-blog/blog/2020-02-23 各种特效（彩带、大白、验证码等）.html" class="sidebar-link">彩带</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="基于yapi搭建接口文档"><a href="#基于yapi搭建接口文档" class="header-anchor">#</a> 基于yapi搭建接口文档</h1> <h2 id="功能介绍"><a href="#功能介绍" class="header-anchor">#</a> 功能介绍</h2> <ol><li>基于swagger快速生成文档，通用绝大数语言</li> <li>可一键生成ts请求代码</li> <li>可自动mock</li> <li>支持多项目、多分类，成员管理</li> <li>对接口自动化测试（未测试功能有效性）</li></ol> <p><img src="/vuepress-blog/assets/img/image-20230730165231935.477ae179.png" alt="image-20230730165231935"></p> <h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <ol><li><p>使用官方脚手架（已经无人维护，出现很多报错，不推荐使用）</p></li> <li><p>使用docker安装：https://github.com/fjc0k/docker-YApi</p> <p>一键安装</p></li></ol> <h2 id="php转swagger"><a href="#php转swagger" class="header-anchor">#</a> php转swagger</h2> <p>需phper想办法解决</p> <p>同时，后台的代码也能通过这种方式展示文档</p> <h2 id="自动同步接口文档"><a href="#自动同步接口文档" class="header-anchor">#</a> 自动同步接口文档</h2> <p>yapi自带功能，配置一个与文档部署环境互通的环境即可</p> <h2 id="接口转ts请求代码"><a href="#接口转ts请求代码" class="header-anchor">#</a> 接口转ts请求代码</h2> <p>https://fjc0k.github.io/yapi-to-typescript/handbook/config.html</p> <p>使用<code>yapi-to-typescript</code>，可直接获取yapi对应项目的接口，通过简单配置即可生成前端需要的接口类型及请求函数，再也不需要对着文档手敲了。</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'yapi-to-typescript'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    serverUrl<span class="token operator">:</span> <span class="token string">'http://127.0.0.1:40001'</span><span class="token punctuation">,</span>
+    typesOnly<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    target<span class="token operator">:</span> <span class="token string">'typescript'</span><span class="token punctuation">,</span>
+    reactHooks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      enabled<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    prodEnvName<span class="token operator">:</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+    outputFilePath<span class="token operator">:</span> <span class="token string">'src/api/path/index.ts'</span><span class="token punctuation">,</span>
+    requestFunctionFilePath<span class="token operator">:</span> <span class="token string">'src/api/request.ts'</span><span class="token punctuation">,</span>
+    dataKey<span class="token operator">:</span> <span class="token string">'data'</span><span class="token punctuation">,</span>
+    projects<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        token<span class="token operator">:</span> <span class="token string">'f92640661e5c7207365dd7c2b6de55daa6743af054e41d0a050e631edd7887df'</span><span class="token punctuation">,</span>
+        categories<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            id<span class="token operator">:</span> <span class="token number">79</span><span class="token punctuation">,</span>
+            <span class="token function">getRequestFunctionName</span><span class="token punctuation">(</span>interfaceInfo<span class="token punctuation">,</span> changeCase<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token comment">// 以接口全路径生成请求函数名</span>
+              <span class="token keyword">return</span> changeCase<span class="token punctuation">.</span><span class="token function">camelCase</span><span class="token punctuation">(</span>interfaceInfo<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+
+              <span class="token comment">// 若生成的请求函数名存在语法关键词报错、或想通过某个关键词触发 IDE 自动引入提示，可考虑加前缀，如:</span>
+              <span class="token comment">// return changeCase.camelCase(`api_${interfaceInfo.path}`)</span>
+
+              <span class="token comment">// 若生成的请求函数名有重复报错，可考虑将接口请求方式纳入生成条件，如:</span>
+              <span class="token comment">// return changeCase.camelCase(`${interfaceInfo.method}_${interfaceInfo.path}`)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>加到package.json中</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;ytt&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ytt&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>生成代码示例：</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">/* prettier-ignore-start */</span>
+<span class="token comment">/* tslint:disable */</span>
+<span class="token comment">/* eslint-disable */</span>
+
+<span class="token comment">/* 该文件由 yapi-to-typescript 自动生成，请勿直接修改！！！ */</span>
+
+<span class="token comment">// @ts-ignore</span>
+<span class="token comment">// prettier-ignore</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> QueryStringArrayFormat<span class="token punctuation">,</span> Method<span class="token punctuation">,</span> RequestBodyType<span class="token punctuation">,</span> ResponseBodyType<span class="token punctuation">,</span> FileData<span class="token punctuation">,</span> prepare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'yapi-to-typescript'</span>
+<span class="token comment">// @ts-ignore</span>
+<span class="token comment">// prettier-ignore</span>
+<span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> RequestConfig<span class="token punctuation">,</span> RequestFunctionRestArgs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'yapi-to-typescript'</span>
+<span class="token comment">// @ts-ignore</span>
+<span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">'../request'</span>
+
+<span class="token keyword">type</span> <span class="token class-name">UserRequestRestArgs</span> <span class="token operator">=</span> RequestFunctionRestArgs<span class="token operator">&lt;</span><span class="token keyword">typeof</span> request<span class="token operator">&gt;</span>
+
+<span class="token comment">// Request: 目前 React Hooks 功能有用到</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Request<span class="token operator">&lt;</span>
+  TRequestData<span class="token punctuation">,</span>
+  TRequestConfig <span class="token keyword">extends</span> RequestConfig<span class="token punctuation">,</span>
+  TRequestResult<span class="token punctuation">,</span>
+<span class="token operator">&gt;</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span>TRequestConfig<span class="token punctuation">[</span><span class="token string">'requestDataOptional'</span><span class="token punctuation">]</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token boolean">true</span></span>
+  <span class="token operator">?</span> <span class="token punctuation">(</span>requestData<span class="token operator">?</span><span class="token operator">:</span> TRequestData<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token operator">:</span> RequestFunctionRestArgs<span class="token operator">&lt;</span><span class="token keyword">typeof</span> request<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function-variable function">TRequestResult</span>
+  <span class="token operator">:</span> <span class="token punctuation">(</span>requestData<span class="token operator">:</span> TRequestData<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token operator">:</span> RequestFunctionRestArgs<span class="token operator">&lt;</span><span class="token keyword">typeof</span> request<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> TRequestResult<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+  requestConfig<span class="token operator">:</span> TRequestConfig
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mockUrl_0_0_0_0 <span class="token operator">=</span> <span class="token string">'http://127.0.0.1:40001/mock/19'</span> <span class="token keyword">as</span> <span class="token builtin">any</span>
+<span class="token keyword">const</span> devUrl_0_0_0_0 <span class="token operator">=</span> <span class="token string">''</span> <span class="token keyword">as</span> <span class="token builtin">any</span>
+<span class="token keyword">const</span> prodUrl_0_0_0_0 <span class="token operator">=</span> <span class="token string">''</span> <span class="token keyword">as</span> <span class="token builtin">any</span>
+<span class="token keyword">const</span> dataKey_0_0_0_0 <span class="token operator">=</span> <span class="token string">'data'</span> <span class="token keyword">as</span> <span class="token builtin">any</span>
+
+<span class="token comment">/**
+ * 接口 [查询↗](http://127.0.0.1:40001/project/19/interface/api/1601) 的 **请求类型**
+ *
+ * @分类 [路径链↗](http://127.0.0.1:40001/project/19/interface/api/cat_79)
+ * @请求头 `POST /search`
+ * @更新时间 `2023-07-30 11:20:12`
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">SearchRequest</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * 链路id
+   */</span>
+  id<span class="token operator">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 接口 [查询↗](http://127.0.0.1:40001/project/19/interface/api/1601) 的 **返回类型**
+ *
+ * @分类 [路径链↗](http://127.0.0.1:40001/project/19/interface/api/cat_79)
+ * @请求头 `POST /search`
+ * @更新时间 `2023-07-30 11:20:12`
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">SearchResponse</span> <span class="token punctuation">{</span>
+  success<span class="token operator">:</span> <span class="token builtin">boolean</span>
+  list<span class="token operator">:</span> <span class="token punctuation">{</span>
+    a<span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">}</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 接口 [查询↗](http://127.0.0.1:40001/project/19/interface/api/1601) 的 **请求配置的类型**
+ *
+ * @分类 [路径链↗](http://127.0.0.1:40001/project/19/interface/api/cat_79)
+ * @请求头 `POST /search`
+ * @更新时间 `2023-07-30 11:20:12`
+ */</span>
+<span class="token keyword">type</span> <span class="token class-name">SearchRequestConfig</span> <span class="token operator">=</span> Readonly<span class="token operator">&lt;</span>
+  RequestConfig<span class="token operator">&lt;</span><span class="token string">'http://127.0.0.1:40001/mock/19'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'/search'</span><span class="token punctuation">,</span> <span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token operator">&gt;</span>
+<span class="token operator">&gt;</span>
+
+<span class="token comment">/**
+ * 接口 [查询↗](http://127.0.0.1:40001/project/19/interface/api/1601) 的 **请求配置**
+ *
+ * @分类 [路径链↗](http://127.0.0.1:40001/project/19/interface/api/cat_79)
+ * @请求头 `POST /search`
+ * @更新时间 `2023-07-30 11:20:12`
+ */</span>
+<span class="token keyword">const</span> searchRequestConfig<span class="token operator">:</span> SearchRequestConfig <span class="token operator">=</span> <span class="token comment">/*#__PURE__*/</span> <span class="token punctuation">{</span>
+  mockUrl<span class="token operator">:</span> mockUrl_0_0_0_0<span class="token punctuation">,</span>
+  devUrl<span class="token operator">:</span> devUrl_0_0_0_0<span class="token punctuation">,</span>
+  prodUrl<span class="token operator">:</span> prodUrl_0_0_0_0<span class="token punctuation">,</span>
+  path<span class="token operator">:</span> <span class="token string">'/search'</span><span class="token punctuation">,</span>
+  method<span class="token operator">:</span> Method<span class="token punctuation">.</span><span class="token constant">POST</span><span class="token punctuation">,</span>
+  requestHeaders<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requestBodyType<span class="token operator">:</span> RequestBodyType<span class="token punctuation">.</span>json<span class="token punctuation">,</span>
+  responseBodyType<span class="token operator">:</span> ResponseBodyType<span class="token punctuation">.</span>json<span class="token punctuation">,</span>
+  dataKey<span class="token operator">:</span> dataKey_0_0_0_0<span class="token punctuation">,</span>
+  paramNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  queryNames<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  requestDataOptional<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  requestDataJsonSchema<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  responseDataJsonSchema<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  requestFunctionName<span class="token operator">:</span> <span class="token string">'search'</span><span class="token punctuation">,</span>
+  queryStringArrayFormat<span class="token operator">:</span> QueryStringArrayFormat<span class="token punctuation">.</span>brackets<span class="token punctuation">,</span>
+  extraInfo<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 接口 [查询↗](http://127.0.0.1:40001/project/19/interface/api/1601) 的 **请求函数**
+ *
+ * @分类 [路径链↗](http://127.0.0.1:40001/project/19/interface/api/cat_79)
+ * @请求头 `POST /search`
+ * @更新时间 `2023-07-30 11:20:12`
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> search <span class="token operator">=</span> <span class="token comment">/*#__PURE__*/</span> <span class="token punctuation">(</span>requestData<span class="token operator">:</span> SearchRequest<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token operator">:</span> UserRequestRestArgs<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">request</span><span class="token generic class-name"><span class="token operator">&lt;</span>SearchResponse<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token function">prepare</span><span class="token punctuation">(</span>searchRequestConfig<span class="token punctuation">,</span> requestData<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+search<span class="token punctuation">.</span>requestConfig <span class="token operator">=</span> searchRequestConfig
+
+<span class="token comment">/* prettier-ignore-end */</span>
+
+</code></pre></div><p>request</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> RequestFunctionParams <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'yapi-to-typescript'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">RequestOptions</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * 使用的服务器。
+   *
+   * - `prod`: 生产服务器
+   * - `dev`: 测试服务器
+   * - `mock`: 模拟服务器
+   *
+   * @default prod
+   */</span>
+  server<span class="token operator">?</span><span class="token operator">:</span> <span class="token string">'prod'</span> <span class="token operator">|</span> <span class="token string">'dev'</span> <span class="token operator">|</span> <span class="token string">'mock'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token generic-function"><span class="token function">request</span><span class="token generic class-name"><span class="token operator">&lt;</span>TResponseData<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>
+  payload<span class="token operator">:</span> RequestFunctionParams<span class="token punctuation">,</span>
+  options<span class="token operator">:</span> RequestOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+    server<span class="token operator">:</span> <span class="token string">'prod'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>TResponseData<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span><span class="token operator">&lt;</span>TResponseData<span class="token operator">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 基本地址</span>
+    <span class="token keyword">const</span> baseUrl <span class="token operator">=</span> options<span class="token punctuation">.</span>server <span class="token operator">===</span> <span class="token string">'mock'</span>
+      <span class="token operator">?</span> payload<span class="token punctuation">.</span>mockUrl
+      <span class="token operator">:</span> options<span class="token punctuation">.</span>server <span class="token operator">===</span> <span class="token string">'dev'</span>
+        <span class="token operator">?</span> payload<span class="token punctuation">.</span>devUrl
+        <span class="token operator">:</span> payload<span class="token punctuation">.</span>prodUrl
+
+    <span class="token comment">// 请求地址</span>
+    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>baseUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>payload<span class="token punctuation">.</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+
+    <span class="token comment">// 具体请求逻辑</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="mock数据"><a href="#mock数据" class="header-anchor">#</a> mock数据</h2> <p><code>yapi</code>自带mock功能</p> <p>通过对<code>yapi-to-typescript</code>生成的request文件简单封装即可实现mock数据，再也不需要去项目中手动创建mock了。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/vuepress-blog/blog/2023-02-12 笔记.html">
+        笔记
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress-blog/assets/js/app.de87c580.js" defer></script><script src="/vuepress-blog/assets/js/2.86d89517.js" defer></script><script src="/vuepress-blog/assets/js/7.3cb45aa9.js" defer></script>
+  </body>
+</html>

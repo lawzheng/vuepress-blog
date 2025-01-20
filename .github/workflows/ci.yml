@@ -28,6 +28,7 @@ jobs:
       - name: Install and Build
         run: |
           npm config set strict-ssl false
+          yarn config set strict-ssl false
           yarn install
           yarn run build
       - name: Deploy

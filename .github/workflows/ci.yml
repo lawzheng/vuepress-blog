@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 - must set persist-credentials to false in most cases for the deployment to work correctly.
@@ -28,7 +28,6 @@ jobs:
       - name: Install and Build
         run: |
           npm config set strict-ssl false
-          yarn config set strict-ssl false
           yarn install
           yarn run build
       - name: Deploy

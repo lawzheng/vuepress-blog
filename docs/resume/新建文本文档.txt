@@ -4,9 +4,7 @@ ixs组件库-具体几个组件 guide、LayoutComponent
 ext，backbone（开发优化），vue3多框架开发
 接口文档自动ts+api+mock
 aigc插件
-vite打包
 部门培训
 3d展馆、地图
-创新
 
 

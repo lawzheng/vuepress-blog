@@ -1,3 +1,96 @@
+### 类型体操
+// key做类型
+type KeysToUnion<T> = keyof T;
+
+// value做类型
+type Values<T> = T[KeysToUnion<T>];
+
+// key做类型的数组
+type KeysToTuple<T> = KeysToUnion<T>[];
+
+// 挑选value符合类型的
+type ExtractValues<T, V> = {
+  [Key in keyof T as T[Key] extends V ? Key : never]: T[Key];
+};
+
+// 排除value符合类型的
+type ExcludeValues<T, V> = {
+  [Key in keyof T as T[Key] extends V ? never : Key]: T[Key];
+};
+
+// 每个key需添加get set
+type GetterSetterPrefix<T> = {
+  [Key in keyof T as Key extends string
+    ? `get${Capitalize<Key>}`
+    : never]: () => T[Key];
+} & {
+  [Key in keyof T as Key extends string ? `set${Capitalize<Key>}` : never]: (
+    val: T[Key]
+  ) => void;
+} & T;
+
+// value转成get set
+type Proxify<T> = {
+  [P in keyof T]: {
+    get: () => T[P];
+    set: (v: T[P]) => void;
+  };
+};
+
+// key转成可选的，value支持传null
+type NullableValue<T> = {
+  [Key in keyof T]?: Nullable<T[Key]>;
+};
+
+// 挑选所需要的key
+type Include<T extends object, U extends keyof any> = {
+  [Key in keyof T as Key extends U ? Key : never]: T[Key];
+};
+
+// 改key对应的type为传入的值
+type ChangeRecordType<K, T = undefined> = {
+  [P in keyof K]?: T;
+};
+
+// 值变为可改的
+type Mutable<T> = {
+  -readonly [P in keyof T]: T[P];
+};
+
+// 变为只读和可选
+type ReadonlyPartial<T> = {
+  readonly [P in keyof T]?: T[P];
+};
+
+// 所有属性转可选
+type DeepPartial<T> = {
+  [Key in keyof T]?: T[Key] extends object ? DeepPartial<T[Key]> : T[Key];
+};
+
+// 手写 Readonly
+type MyReadonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+// 手写 Partial
+type MyPartial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+// 手写 Pick
+type MyPick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+
+// 数组item转某个key做key的对象
+interface User { id: number; name: string }
+
+type UsersArray = User[];
+
+type UsersMap<T extends UsersArray> = {
+  [K in T[number]['id']]: Extract<T[number], { id: K }>
+};
+
 ### 安装
 
 ```text

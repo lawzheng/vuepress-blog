@@ -11,6 +11,7 @@
   - 会受到浏览器隐身模式等的限制
 - 设置共享`cookie`与不断轮询脏检查(`setInterval`)
 - 借助服务端或者中间层实现
+- Broadcast Channel API
 
 
 
